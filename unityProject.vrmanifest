@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.wefeet.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "F:\\VR TKLQ\\intprojectrepo-wefeet\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "WeFeet [Testing]"
+        }
+      }
+    }
+  ]
+}
