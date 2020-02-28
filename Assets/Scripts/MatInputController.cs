@@ -84,6 +84,7 @@ public class MatInputController : MonoBehaviour
             catch (Exception e)
             {
                 //ignore
+                Debug.Log(e);
             }
         }
         Move();
