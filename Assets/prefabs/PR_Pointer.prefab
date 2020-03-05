@@ -91,6 +91,8 @@ GameObject:
   - component: {fileID: 7603079665162581136}
   - component: {fileID: 4577960924564769919}
   - component: {fileID: 5025643532245694073}
+  - component: {fileID: 1042181705}
+  - component: {fileID: 1042181706}
   m_Layer: 0
   m_Name: PR_Pointer
   m_TagString: Untagged
@@ -127,8 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DefaultLength: 0.5
   m_Dot: {fileID: 2103467608878976456}
-  m_InputModule: {fileID: 2489304453051703514, guid: 8ab07d5f2a43dc148a9e29b4571b1b9c,
-    type: 3}
+  m_InputModule: {fileID: 1042181705}
 --- !u!20 &4577960924564769919
 Camera:
   m_ObjectHideFlags: 0
@@ -278,3 +279,35 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &1042181705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807095083889868844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f5e260e65dac945ba5d5fedb6e5594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Camera: {fileID: 4577960924564769919}
+  m_TargetSource: 2
+  m_ClickAction:
+    actionPath: /actions/default/in/Teleport
+    needsReinit: 0
+--- !u!114 &1042181706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807095083889868844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
