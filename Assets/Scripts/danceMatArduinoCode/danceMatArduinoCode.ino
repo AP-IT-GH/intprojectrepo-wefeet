@@ -66,15 +66,15 @@ void loop()
 }
 void getDummyStates ()
 {
-  section1Raw = random(0,2);
-  section2Raw = random(0,2);
-  section3Raw = random(0,2);
-  section4Raw = random(0,2);
-  section5Raw = random(0,2);
-  section6Raw = random(0,2);
-  section7Raw = random(0,2);
-  section8Raw = random(0,2);
-  section9Raw = random(0,2);
+  section1State = random(0,2);
+  section2State = random(0,2);
+  section3State = random(0,2);
+  section4State = random(0,2);
+  section5State = random(0,2);
+  section6State = random(0,2);
+  section7State = random(0,2);
+  section8State = random(0,2);
+  section9State = random(0,2);
 }
 void getStates() 
 {
