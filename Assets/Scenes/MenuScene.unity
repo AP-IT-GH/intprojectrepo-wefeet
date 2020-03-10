@@ -987,9 +987,11 @@ GameObject:
   - component: {fileID: 771714388}
   - component: {fileID: 771714387}
   - component: {fileID: 771714386}
+  - component: {fileID: 771714391}
+  - component: {fileID: 771714390}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: mainMenuTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1069,14 +1071,49 @@ RectTransform:
   - {fileID: 704181391}
   - {fileID: 1510952619}
   - {fileID: 246134955}
-  m_Father: {fileID: 1996493066}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2380.5, y: 1326}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &771714390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771714385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4923b185462d45145a64dc11c383cd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activate: 0
+  MenuOnOff:
+    actionPath: /actions/MenuButton1/in/MenuOpen
+    needsReinit: 0
+  handType: 0
+--- !u!114 &771714391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771714385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27991c206a5e66147bb8ee3ef31c8bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionSet:
+    actionSetPath: /actions/MenuButton1
+  forSources: 0
+  disableAllOtherActionSets: 0
+  activateOnStart: 1
+  deactivateOnDestroy: 1
 --- !u!1 &852587857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,7 +1974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3092,12 +3129,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968641321}
   m_CullTransparentMesh: 0
---- !u!4 &1996493066 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 429506, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1472925392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2027152651
 GameObject:
   m_ObjectHideFlags: 0
