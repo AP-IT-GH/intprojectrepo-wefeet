@@ -7,10 +7,16 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 { 
 
-    public void PlayGame()
+    public void PlayDiscoGame()
     {
-        SceneManager.LoadScene("DanceGameScene",LoadSceneMode.Single);
+        SceneManager.LoadScene("DanceGameScene",LoadSceneMode.Single); // Nog aan te passen van zodra merge van branch gebeurd is ! 
        // SceneManager.UnloadScene("MenuScene");
+    }
+
+    public void PlayCinemaGame()
+    {
+        SceneManager.LoadScene("DanceGameScene", LoadSceneMode.Single); // Nog aan te passen van zodra merge van branch gebeurd is !
+        // SceneManager.UnloadScene("MenuScene");
     }
 
     public void QuitGame ()
