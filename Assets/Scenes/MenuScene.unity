@@ -1091,9 +1091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4923b185462d45145a64dc11c383cd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activate: 0
   MenuOnOff:
-    actionPath: /actions/MenuButton1/in/MenuOpen
+    actionPath: /actions/default/in/OpenMenu1
     needsReinit: 0
   handType: 0
 --- !u!114 &771714391
@@ -1109,7 +1108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionSet:
-    actionSetPath: /actions/MenuButton1
+    actionSetPath: /actions/default
   forSources: 0
   disableAllOtherActionSets: 0
   activateOnStart: 1

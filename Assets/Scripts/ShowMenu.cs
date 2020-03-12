@@ -5,13 +5,13 @@ using Valve.VR;
 
 public class ShowMenu : MonoBehaviour
 {
-    public bool activate = true;
-
     // a reference to the action
     public SteamVR_Action_Boolean MenuOnOff;
     // a reference to the hand
     public SteamVR_Input_Sources handType;
-
+    //the gameObject
+    public GameObject selectedGameObject;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,19 +22,20 @@ public class ShowMenu : MonoBehaviour
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         Debug.Log("up");
-        GameObject.FindWithTag("mainMenuTag").SetActive(true);
+        //GameObject.FindWithTag("mainMenuTag").SetActive(true); //werkt niet
+        selectedGameObject.SetActive(false);
     }
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         Debug.Log("down");
-        GameObject.FindWithTag("mainMenuTag").SetActive(false);
+        //GameObject.FindWithTag("mainMenuTag").SetActive(false);
+        selectedGameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
-    {
-        //GameObject.FindWithTag("mainMenuTag").SetActive(activate);
+    {        
         MenuOnOff.AddOnStateDownListener(TriggerDown, handType);
         MenuOnOff.AddOnStateUpListener(TriggerUp, handType);
     }
