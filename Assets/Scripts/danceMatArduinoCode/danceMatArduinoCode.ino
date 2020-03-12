@@ -17,7 +17,7 @@ int clearLEDs = 0;
 void setup()
 {
     Serial.begin(9600);
-    FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
+    FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);  
 }
 
 void loop()
