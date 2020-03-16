@@ -1990,7 +1990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuOnOff:
-    actionPath: /actions/MenuButton1/in/MenuOpen
+    actionPath: /actions/default/in/OpenMenu1
     needsReinit: 0
   handType: 0
   selectedGameObject: {fileID: 771714385}
