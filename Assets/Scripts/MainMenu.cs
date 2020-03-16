@@ -9,13 +9,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlayDiscoGame()
     {       
-        SceneManager.LoadScene("DanceGameScene",LoadSceneMode.Single); // Nog aan te passen van zodra merge van branch gebeurd is ! 
+        SceneManager.LoadScene("Disco",LoadSceneMode.Single); // Nog aan te passen van zodra merge van branch gebeurd is ! 
         // SceneManager.UnloadScene("MenuScene");
     }
 
     public void PlayCinemaGame()
     {
-        SceneManager.LoadScene("DanceGameScene", LoadSceneMode.Single); // Nog aan te passen van zodra merge van branch gebeurd is !
+        SceneManager.LoadScene("Assets/Scenes/Dance_Cinema/Dance_Cinema.unity", LoadSceneMode.Single); // Nog aan te passen van zodra merge van branch gebeurd is !
         // SceneManager.UnloadScene("MenuScene");
     }
 

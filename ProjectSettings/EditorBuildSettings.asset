@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DanceGameScene.unity
     guid: 9a29ca2ffb267ba40a1baf57735e6c78
+  - enabled: 1
+    path: Assets/Scenes/Disco.unity
+    guid: 618a9088c611c1145878ba8fbf7b05fc
+  - enabled: 1
+    path: Assets/Scenes/Dance_Cinema/Dance_Cinema.unity
+    guid: 791cd99c1e8e1b4439ed4e8846160722
   m_configObjects: {}
