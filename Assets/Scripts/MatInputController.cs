@@ -14,7 +14,6 @@ public class MatInputController : MonoBehaviour
     private SerialPort port;
     bool arduinoConnected = false;
     string lastCompleteInput = "000000000,";
-    Vector3 currentPosition = new Vector3(0, 0, 0);
 
     public bool Forward { get; protected set; }
     public bool LeftForward { get; protected set; }
