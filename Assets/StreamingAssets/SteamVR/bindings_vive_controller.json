@@ -103,6 +103,15 @@
             {
                "inputs" : {
                   "click" : {
+                     "output" : "/actions/default/in/openmenu1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
                      "output" : "/actions/default/in/grabgrip"
                   }
                },
@@ -117,7 +126,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/openmenu1"
+                     "output" : "/actions/default/in/grabpinch"
                   }
                },
                "mode" : "button",
@@ -132,6 +141,15 @@
                "inputs" : {
                   "click" : {
                      "output" : "/actions/default/in/openmenu1"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/grabpinch"
                   }
                },
                "mode" : "button",
@@ -224,6 +242,16 @@
                },
                "mode" : "trigger",
                "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/trigger"
             }
          ]
       },
@@ -271,7 +299,7 @@
    "category" : "steamvr_input",
    "controller_type" : "vive_controller",
    "description" : "",
-   "name" : "Mijn WeFeet [Testing]-configuratie voor Vive Controller",
+   "name" : "My WeFeet [Testing] configuration for Vive Controller",
    "options" : {},
    "simulated_actions" : []
 }
