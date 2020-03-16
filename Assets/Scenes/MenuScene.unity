@@ -417,6 +417,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65047957}
   m_CullTransparentMesh: 0
+--- !u!4 &137488669 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1472925392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &246134954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,7 +1990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuOnOff:
-    actionPath: /actions/default/in/OpenMenu1
+    actionPath: /actions/MenuButton1/in/MenuOpen
     needsReinit: 0
   handType: 0
   selectedGameObject: {fileID: 771714385}
@@ -2001,7 +2007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionSet:
-    actionSetPath: /actions/default
+    actionSetPath: /actions/MenuButton1
   forSources: 0
   disableAllOtherActionSets: 0
   activateOnStart: 1
@@ -2018,8 +2024,8 @@ RectTransform:
   m_LocalScale: {x: 0.08708149, y: 0.08708149, z: 0.08708149}
   m_Children:
   - {fileID: 771714389}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 137488669}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
