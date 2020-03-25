@@ -106,39 +106,39 @@ public class MatInputController : MonoBehaviour
         RightBackward = false;
 
         //set input true
-        if (lastCompleteInput == "100000000,")
+        if (lastCompleteInput[0] == '1')
         {
             LeftForward = true;
         }
-        if (lastCompleteInput == "010000000,")
+        if (lastCompleteInput[1] == '1')
         {
             Forward = true;
         }
-        if (lastCompleteInput == "001000000,")
+        if (lastCompleteInput[2] == '1')
         {
             RightForward = true;
         }
-        if (lastCompleteInput == "000100000,")
+        if (lastCompleteInput[3] == '1')
         {
             Left = true;
         }
-        if (lastCompleteInput == "000010000,")
+        if (lastCompleteInput[4] == '1')
         {
             Center = true;
         }
-        if (lastCompleteInput == "000001000,")
+        if (lastCompleteInput[5] == '1')
         {
             Right = true;
         }
-        if (lastCompleteInput == "000000100,")
+        if (lastCompleteInput[6] == '1')
         {
             LeftBackward = true;
         }
-        if (lastCompleteInput == "000000010,")
+        if (lastCompleteInput[7] == '1')
         {
             Backward = true;
         }
-        if (lastCompleteInput == "000000001,")
+        if (lastCompleteInput[8] == '1')
         {
             RightBackward = true;
         }
