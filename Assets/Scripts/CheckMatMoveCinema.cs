@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckMatMove : MonoBehaviour
+public class CheckMatMoveCinema : MonoBehaviour
 {
     private MatInputController Mat = new MatInputController();
     private int currentMove = 0;
