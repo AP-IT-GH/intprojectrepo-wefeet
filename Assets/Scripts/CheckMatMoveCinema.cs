@@ -9,6 +9,10 @@ public class CheckMatMoveCinema : MonoBehaviour
     private int currentMove = 0;
     private int score = 0;
 
+    [Header("Add the 9 tiles")]
+    [Tooltip("start by the top left tile, then the one to the right and so on, then move down a row")]
+    public GameObject[] tiles;
+
     public int Score { get => score; }
 
 
@@ -25,9 +29,11 @@ public class CheckMatMoveCinema : MonoBehaviour
         Mat.Update();
         float currentTime = Time.time;
 
+        ShowFeet();
+
         #region both feet center at 0 seconds
         //3 seconds time to complete the move
-        if(currentTime < 3)
+        if (currentTime < 3)
         {
             if(currentMove == 0)
             {
@@ -66,6 +72,23 @@ public class CheckMatMoveCinema : MonoBehaviour
             }
         }
         #endregion
+    }
+
+    private void ShowFeet() //visually show where your feet are
+    {
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            tiles[i].SetActive(false);
+        }
+        if (Mat.LeftForward) tiles[0].SetActive(true);
+        if (Mat.Forward) tiles[1].SetActive(true);
+        if (Mat.RightForward) tiles[2].SetActive(true);
+        if (Mat.Left) tiles[3].SetActive(true);
+        if (Mat.Center) tiles[4].SetActive(true);
+        if (Mat.Right) tiles[5].SetActive(true);
+        if (Mat.LeftBackward) tiles[6].SetActive(true);
+        if (Mat.Backward) tiles[7].SetActive(true);
+        if (Mat.RightBackward) tiles[8].SetActive(true);
     }
 
     private void IncorrectMove()
