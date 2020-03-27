@@ -229,7 +229,15 @@ public static class Move
                 List<bool> moves = new List<bool>();
                 foreach (char item in requiredMove)
                 {
-                    moves.Add(Convert.ToBoolean(item));
+                    if (item == '0')
+                    {
+                        moves.Add(false);
+                    }
+                    else if(item == '1')
+                    {
+                        moves.Add(true);
+                    }
+                    
                 }
                 if (Mat.LeftForward == moves[0] && 
                     Mat.Forward == moves[1] && 

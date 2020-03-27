@@ -76,7 +76,6 @@ public class MatInputController : MonoBehaviour
             try
             {
                 string myString = port.ReadLine();
-                Debug.Log(myString);
                 lastCompleteInput = myString;
                 port.ReadTimeout = 25;
             }
