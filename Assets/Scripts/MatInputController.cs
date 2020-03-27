@@ -168,6 +168,15 @@ public class MatInputController : MonoBehaviour
         Debug.Log("Opening connection finished running");
     }
 
+    public void CloseConnection()
+    {
+        if (port != null && port.IsOpen)
+        {
+            port.Close();
+            Debug.Log("Connection closed");
+        }
+    }
+
     void OnApplicationQuit()
     {
         if (port != null)

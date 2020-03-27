@@ -15,6 +15,7 @@ public class CheckMatMoveCinema : MonoBehaviour
 
     public int Score { get => score; }
     private Move.moveResponse requiredMove;
+    private bool endedConnection = false;
 
 
     void Start()
@@ -161,6 +162,13 @@ public class CheckMatMoveCinema : MonoBehaviour
         requiredMove = Move.Moves(currentMove, 17, currentTime, 48, 53, Mat, "000010000");
         checkMove(requiredMove);
         #endregion
+
+        //close connection after final move
+        if(currentMove == 18 && endedConnection == false)
+        {
+            Mat.CloseConnection();
+            endedConnection = true;
+        }
 
     }
 
