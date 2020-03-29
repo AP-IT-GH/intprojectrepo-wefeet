@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - mainMenuTag
+  - score
+  - screen
   layers:
   - Default
   - TransparentFX
