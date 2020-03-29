@@ -2649,7 +2649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 1000
+  m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -9047,7 +9047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15887,7 +15887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ef87a0b2268384d98dc17e7a766b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changingText: {fileID: 0}
+  changingText: {fileID: 1468381859}
 --- !u!114 &1468381859
 MonoBehaviour:
   m_ObjectHideFlags: 0
