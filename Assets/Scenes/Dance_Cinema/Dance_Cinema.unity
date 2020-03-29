@@ -14984,7 +14984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665268faba67c384c8fa9eb39e340870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textField: {fileID: 0}
+  textField: {fileID: 1468381858}
   scoreScript: {fileID: 1390262566}
 --- !u!1001 &1402691494
 PrefabInstance:
