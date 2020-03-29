@@ -14,8 +14,11 @@ public class CheckMatMoveCinema : MonoBehaviour
     public GameObject[] tiles;
 
     public int Score { get => score; }
+    public float offset = 0;
+
     private Move.moveResponse requiredMove;
     private bool endedConnection = false;
+    private float startTime;
 
 
     void Start()
@@ -23,13 +26,14 @@ public class CheckMatMoveCinema : MonoBehaviour
         Mat.Start();
         score = 0;
         currentMove = 0;
+        startTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
         Mat.Update();
-        float currentTime = Time.time;
+        float currentTime = Time.time - startTime;
 
         ShowFeet();
 
@@ -74,100 +78,102 @@ public class CheckMatMoveCinema : MonoBehaviour
         #endregion
 
         #region 0
-        requiredMove = Move.Moves(currentMove, 0, currentTime, 7, 9, Mat, "101000000");
+        requiredMove = Move.Moves(currentMove, 0, currentTime, 18.6f, 20.6f, offset, Mat, "101000000");
         checkMove(requiredMove);
         #endregion
 
         #region 1
-        requiredMove = Move.Moves(currentMove, 1, currentTime, 9, 11, Mat, "000101000");
+        requiredMove = Move.Moves(currentMove, 1, currentTime, 20.6f, 22.9f, offset, Mat, "000101000");
         checkMove(requiredMove);
         #endregion
 
         #region 2
-        requiredMove = Move.Moves(currentMove, 2, currentTime, 11, 14, Mat, "000000101");
+        requiredMove = Move.Moves(currentMove, 2, currentTime, 22.9f, 25.8f, offset, Mat, "000000101");
         checkMove(requiredMove);
         #endregion
 
         #region 3
-        requiredMove = Move.Moves(currentMove, 3, currentTime, 14, 22, Mat, "000010000");
+        requiredMove = Move.Moves(currentMove, 3, currentTime, 25.8f, 34.2f, offset, Mat, "000010000");
         checkMove(requiredMove);
         #endregion
 
         #region 4
-        requiredMove = Move.Moves(currentMove, 4, currentTime, 22, 24, Mat, "000100000");
+        requiredMove = Move.Moves(currentMove, 4, currentTime, 34.2f, 36.2f, offset, Mat, "000100000");
         checkMove(requiredMove);
         #endregion
 
         #region 5
-        requiredMove = Move.Moves(currentMove, 5, currentTime, 24, 28, Mat, "000010000");
+        requiredMove = Move.Moves(currentMove, 5, currentTime, 36.2f, 40.1f, offset, Mat, "000010000");
         checkMove(requiredMove);
         #endregion
 
         #region 6
-        requiredMove = Move.Moves(currentMove, 6, currentTime, 28, 30, Mat, "000011000");
+        requiredMove = Move.Moves(currentMove, 6, currentTime, 40.1f, 42.3f, offset, Mat, "000011000");
         checkMove(requiredMove);
         #endregion
 
         #region 7
-        requiredMove = Move.Moves(currentMove, 7, currentTime, 30, 32, Mat, "000110000");
+        requiredMove = Move.Moves(currentMove, 7, currentTime, 42.3f, 44.4f, offset, Mat, "000110000");
         checkMove(requiredMove);
         #endregion
 
         #region 8
-        requiredMove = Move.Moves(currentMove, 8, currentTime, 32, 33, Mat, "000010000");
+        requiredMove = Move.Moves(currentMove, 8, currentTime, 44.4f, 45.6f, offset, Mat, "000010000");
         checkMove(requiredMove);
         #endregion
 
         #region 9
-        requiredMove = Move.Moves(currentMove, 9, currentTime, 33, 34, Mat, "101000000");
+        requiredMove = Move.Moves(currentMove, 9, currentTime, 45.6f, 46.9f, offset, Mat, "101000000");
         checkMove(requiredMove);
         #endregion
 
         #region 10
-        requiredMove = Move.Moves(currentMove, 10, currentTime, 34, 35, Mat, "000101000");
+        requiredMove = Move.Moves(currentMove, 10, currentTime, 46.9f, 47.9f, offset, Mat, "000101000");
         checkMove(requiredMove);
         #endregion
 
         #region 11
-        requiredMove = Move.Moves(currentMove, 11, currentTime, 35, 36, Mat, "000000101");
+        requiredMove = Move.Moves(currentMove, 11, currentTime, 47.9f, 49.0f, offset, Mat, "000000101");
         checkMove(requiredMove);
         #endregion
 
         #region 12
-        requiredMove = Move.Moves(currentMove, 12, currentTime, 36, 38, Mat, "000010000");
+        requiredMove = Move.Moves(currentMove, 12, currentTime, 49.0f, 51.1f, offset, Mat, "000010000");
         checkMove(requiredMove);
         #endregion
 
         #region 13
-        requiredMove = Move.Moves(currentMove, 13, currentTime, 38, 39, Mat, "000100000");
+        requiredMove = Move.Moves(currentMove, 13, currentTime, 51.1f, 52.2f, offset, Mat, "000100000");
         checkMove(requiredMove);
         #endregion
 
         #region 14
-        requiredMove = Move.Moves(currentMove, 14, currentTime, 39, 42, Mat, "000010000");
+        requiredMove = Move.Moves(currentMove, 14, currentTime, 52.2f, 55.3f, offset, Mat, "000010000");
         checkMove(requiredMove);
         #endregion
 
         #region 15
-        requiredMove = Move.Moves(currentMove, 15, currentTime, 42, 44, Mat, "000011000");
+        requiredMove = Move.Moves(currentMove, 15, currentTime, 55.3f, 57.4f, offset, Mat, "000011000");
         checkMove(requiredMove);
         #endregion
 
         #region 16
-        requiredMove = Move.Moves(currentMove, 16, currentTime, 44, 48, Mat, "000110000");
+        requiredMove = Move.Moves(currentMove, 16, currentTime, 57.4f, 61.4f, offset, Mat, "000110000");
         checkMove(requiredMove);
         #endregion
 
         #region 17
-        requiredMove = Move.Moves(currentMove, 17, currentTime, 48, 53, Mat, "000010000");
+        requiredMove = Move.Moves(currentMove, 17, currentTime, 61.4f, 67.5f, offset, Mat, "000010000");
         checkMove(requiredMove);
         #endregion
 
-        //close connection after final move
+        //close connection after final move and destroy this script
         if(currentMove == 18 && endedConnection == false)
         {
             Mat.CloseConnection();
             endedConnection = true;
+
+            Destroy(this);
         }
 
     }
@@ -228,9 +234,9 @@ public static class Move
         Waiting
     }
 
-    public static moveResponse Moves(int currentMove, int moveNumber, float currentTime, float beginTime, float endTime, MatInputController Mat, string requiredMove)
+    public static moveResponse Moves(int currentMove, int moveNumber, float currentTime, float beginTime, float endTime, float offset, MatInputController Mat, string requiredMove)
     {
-        if (currentTime > beginTime && currentTime < endTime)
+        if (currentTime > beginTime + offset && currentTime < endTime + offset)
         {
             if (currentMove == moveNumber)
             {
@@ -271,7 +277,7 @@ public static class Move
         }
         else
         {
-            if (currentMove == moveNumber && currentTime > endTime)
+            if (currentMove == moveNumber && currentTime > endTime + offset)
             {
                 return moveResponse.Incorrect;
             }
