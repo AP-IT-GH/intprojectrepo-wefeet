@@ -2101,6 +2101,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82000013955136614, guid: dc06161b6d97feb419f45f03b62e14b9,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -8442276723098779149, guid: baca3e356f205b944846379a7a4a1fdf,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!1 &1482112547
@@ -2995,7 +3001,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3844,7 +3850,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 24300002, guid: baca3e356f205b944846379a7a4a1fdf,
+      objectReference: {fileID: -4958682005623217011, guid: baca3e356f205b944846379a7a4a1fdf,
         type: 2}
     - target: {fileID: 7945594099071630303, guid: 89aa932d83ffe94479589ce60adb7021,
         type: 3}
