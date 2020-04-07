@@ -14,7 +14,6 @@ public class MatInputController : MonoBehaviour
     private SerialPort port;
     bool arduinoConnected = false;
     string lastCompleteInput = "000000000,";
-    Vector3 currentPosition = new Vector3(0, 0, 0);
 
     public bool Forward { get; protected set; }
     public bool LeftForward { get; protected set; }
@@ -77,7 +76,6 @@ public class MatInputController : MonoBehaviour
             try
             {
                 string myString = port.ReadLine();
-                Debug.Log(myString);
                 lastCompleteInput = myString;
                 port.ReadTimeout = 25;
             }
@@ -107,39 +105,39 @@ public class MatInputController : MonoBehaviour
         RightBackward = false;
 
         //set input true
-        if (lastCompleteInput == "100000000,")
+        if (lastCompleteInput[0] == '1')
         {
             LeftForward = true;
         }
-        if (lastCompleteInput == "010000000,")
+        if (lastCompleteInput[1] == '1')
         {
             Forward = true;
         }
-        if (lastCompleteInput == "001000000,")
+        if (lastCompleteInput[2] == '1')
         {
             RightForward = true;
         }
-        if (lastCompleteInput == "000100000,")
+        if (lastCompleteInput[3] == '1')
         {
             Left = true;
         }
-        if (lastCompleteInput == "000010000,")
+        if (lastCompleteInput[4] == '1')
         {
             Center = true;
         }
-        if (lastCompleteInput == "000001000,")
+        if (lastCompleteInput[5] == '1')
         {
             Right = true;
         }
-        if (lastCompleteInput == "000000100,")
+        if (lastCompleteInput[6] == '1')
         {
             LeftBackward = true;
         }
-        if (lastCompleteInput == "000000010,")
+        if (lastCompleteInput[7] == '1')
         {
             Backward = true;
         }
-        if (lastCompleteInput == "000000001,")
+        if (lastCompleteInput[8] == '1')
         {
             RightBackward = true;
         }
@@ -168,6 +166,15 @@ public class MatInputController : MonoBehaviour
             Debug.Log("no port found");
         }
         Debug.Log("Opening connection finished running");
+    }
+
+    public void CloseConnection()
+    {
+        if (port != null && port.IsOpen)
+        {
+            port.Close();
+            Debug.Log("Connection closed");
+        }
     }
 
     void OnApplicationQuit()
