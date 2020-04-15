@@ -5,18 +5,29 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
-{ 
+{
+    string SceneToLoad = "";
 
     public void PlayDiscoGame()
-    {       
-        SceneManager.LoadScene("Disco",LoadSceneMode.Single); // Nog aan te passen van zodra merge van branch gebeurd is ! 
-        // SceneManager.UnloadScene("MenuScene");
+    {
+        SceneToLoad = "Disco";
+        //SceneManager.LoadScene("Disco",LoadSceneMode.Single); // Will be loaded after choosing song        
     }
 
     public void PlayCinemaGame()
     {
-        SceneManager.LoadScene("Assets/Scenes/Dance_Cinema/Dance_Cinema.unity", LoadSceneMode.Single); // Nog aan te passen van zodra merge van branch gebeurd is !
-        // SceneManager.UnloadScene("MenuScene");
+        SceneToLoad = "Assets/Scenes/Dance_Cinema/Dance_Cinema.unity";
+        //SceneManager.LoadScene("Assets/Scenes/Dance_Cinema/Dance_Cinema.unity", LoadSceneMode.Single); // Will be loaded after choosing song
+    }
+
+    public void PlaySong1()
+    {
+        SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Single);
+    }
+
+    public void PlaySong2()
+    {
+        SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Single);
     }
 
     public void QuitGame ()
