@@ -127,7 +127,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17254
+  m_Name: pb_Mesh19786
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9047,7 +9047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13397,7 +13397,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15846
+  m_Name: pb_Mesh19590
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14947,6 +14947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1439d5e86ff64459e231aace8bbaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: -0.7
   tiles:
   - {fileID: 124164347}
   - {fileID: 1473166249}
@@ -14957,7 +14958,16 @@ MonoBehaviour:
   - {fileID: 1432672848}
   - {fileID: 1501478373}
   - {fileID: 575510480}
-  offset: -0.7
+  lights:
+  - {fileID: 495347735}
+  - {fileID: 140411298}
+  - {fileID: 3952224}
+  - {fileID: 1095889428}
+  - {fileID: 777608315}
+  - {fileID: 1584138912}
+  - {fileID: 2018041653}
+  - {fileID: 2084173375}
+  - {fileID: 403266042}
 --- !u!4 &1390262567
 Transform:
   m_ObjectHideFlags: 0
