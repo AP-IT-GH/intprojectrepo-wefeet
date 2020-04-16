@@ -187,6 +187,7 @@ public class CheckMatMoveCinema : MonoBehaviour
             Mat.CloseConnection();
             endedConnection = true;
 
+            changeLight(Color.white, float.MaxValue);
             Destroy(this);
         }
 
