@@ -31,6 +31,8 @@ public class CheckMatMoveCinema : MonoBehaviour
 
     void Start()
     {
+        GameObject screen = GameObject.FindWithTag("screen");
+        screen.SetActive(true);
         Mat.Start();
         score = 0;
         currentMove = 0;
