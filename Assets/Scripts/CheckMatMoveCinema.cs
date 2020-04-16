@@ -9,12 +9,20 @@ public class CheckMatMoveCinema : MonoBehaviour
     private int currentMove = 0;
     private int score = 0;
 
+    [Tooltip("offset between start of song and moves")]
+    public float offset = 0;
+
+
     [Header("Add the 9 tiles")]
     [Tooltip("start by the top left tile, then the one to the right and so on, then move down a row")]
     public GameObject[] tiles;
 
     public int Score { get => score; }
-    public float offset = 0;
+
+    [Header("Changing lights")]
+    [Tooltip("these light change color and give feedback with a good or bad move")]
+    public List<Light> lights;
+    private float timer = float.MaxValue;
 
     private Move.moveResponse requiredMove;
     private bool endedConnection = false;
@@ -34,6 +42,12 @@ public class CheckMatMoveCinema : MonoBehaviour
     {
         Mat.Update();
         float currentTime = Time.time - startTime;
+
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            changeLight(Color.white, float.MaxValue);
+        }
 
         ShowFeet();
 
@@ -214,6 +228,9 @@ public class CheckMatMoveCinema : MonoBehaviour
     {
         currentMove++;
         Debug.Log("INCORRECT MOVE");
+
+        //change light color to red for 0.5s
+        changeLight(Color.red, 0.5f);
     }
 
     private void CorrectMove()
@@ -221,6 +238,18 @@ public class CheckMatMoveCinema : MonoBehaviour
         score++;
         currentMove++;
         Debug.Log("SCORE: " + score);
+
+        //change light to green for 0.5s
+        changeLight(Color.green, 0.5f);
+    }
+
+    private void changeLight(Color color, float duration)
+    {
+        timer = duration;
+        foreach (Light item in lights)
+        {
+            item.color = color;
+        }
     }
 }
 
