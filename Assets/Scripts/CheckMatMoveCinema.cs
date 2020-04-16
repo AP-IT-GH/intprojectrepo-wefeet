@@ -12,6 +12,8 @@ public class CheckMatMoveCinema : MonoBehaviour
     [Tooltip("offset between start of song and moves")]
     public float offset = 0;
 
+    public GameObject screen;
+
 
     [Header("Add the 9 tiles")]
     [Tooltip("start by the top left tile, then the one to the right and so on, then move down a row")]
@@ -31,7 +33,6 @@ public class CheckMatMoveCinema : MonoBehaviour
 
     void Start()
     {
-        GameObject screen = GameObject.FindWithTag("screen");
         screen.SetActive(true);
         Mat.Start();
         score = 0;
