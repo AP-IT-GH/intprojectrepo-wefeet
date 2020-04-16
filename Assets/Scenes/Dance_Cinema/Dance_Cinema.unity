@@ -14947,7 +14947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1439d5e86ff64459e231aace8bbaf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: -0.7
+  offset: -0.6
   screen: {fileID: 570684783}
   tiles:
   - {fileID: 124164347}

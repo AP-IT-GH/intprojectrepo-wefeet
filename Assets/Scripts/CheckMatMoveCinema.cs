@@ -29,21 +29,29 @@ public class CheckMatMoveCinema : MonoBehaviour
     private Move.moveResponse requiredMove;
     private bool endedConnection = false;
     private float startTime;
+    bool begin = false;
 
 
     void Start()
     {
-        screen.SetActive(true);
         Mat.Start();
+        //screen.SetActive(true);
+        //startTime = Time.time;
         score = 0;
         currentMove = 0;
-        startTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
         Mat.Update();
+
+        if (!begin)
+        {
+            startTime = Time.time;
+            screen.SetActive(true);
+        }
+        begin = true;
         float currentTime = Time.time - startTime;
 
         timer -= Time.deltaTime;
