@@ -5,7 +5,8 @@ using UnityEngine;
 public class showScore : MonoBehaviour
 {
     public changeText textField;
-    public CheckMatMoveCinema scoreScript;
+    public DanceMonkey scoreScript1;
+    public ChaChaSlide scoreScript2;
 
     int score;
 
@@ -18,7 +19,9 @@ public class showScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score = scoreScript.Score;
+        if(scoreScript1 != null) score = scoreScript1.Score;
+        else if (scoreScript2 != null) score = scoreScript2.Score;
+
         textField.changeScore(score);
     }
 }

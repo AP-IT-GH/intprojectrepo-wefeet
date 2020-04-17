@@ -5,5 +5,5 @@ using UnityEngine;
 public class NavBuffer : MonoBehaviour
 {
     public static string BufferSceneToLoad = "";
-
+    public static string SongToLoad = "";
 }

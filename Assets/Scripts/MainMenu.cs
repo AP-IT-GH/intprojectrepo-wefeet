@@ -21,11 +21,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlaySong1()
     {
+        NavBuffer.SongToLoad = "chacha";
         SceneManager.LoadScene(NavBuffer.BufferSceneToLoad, LoadSceneMode.Single);
     }
 
     public void PlaySong2()
     {
+        NavBuffer.SongToLoad = "danceMonkey";
         SceneManager.LoadScene(NavBuffer.BufferSceneToLoad, LoadSceneMode.Single);
     }
 
