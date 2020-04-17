@@ -13620,7 +13620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewTrack: {fileID: 8300000, guid: 4fa188fa588af034eb127b51d47a811e, type: 3}
-  StopMusicOnLoad: 0
+  StopMusicOnLoad: 1
 --- !u!4 &2105917226
 Transform:
   m_ObjectHideFlags: 0
