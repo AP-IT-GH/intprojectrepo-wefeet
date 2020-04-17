@@ -21,14 +21,12 @@ public class ShowMenu : MonoBehaviour
 
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        //Debug.Log("up");
         //GameObject.FindWithTag("mainMenuTag").SetActive(true); //werkt niet
         selectedGameObject.SetActive(false);
     }
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        //Debug.Log("down");
         //GameObject.FindWithTag("mainMenuTag").SetActive(false);
         selectedGameObject.SetActive(true);
     }
