@@ -405,8 +405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7627afff000f84544839406eb5d1ec3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chacha: {fileID: 0}
-  danceMonkey: {fileID: 0}
+  chacha: {fileID: 1390262565}
+  danceMonkey: {fileID: 1961032845}
 --- !u!4 &5948900
 Transform:
   m_ObjectHideFlags: 0
