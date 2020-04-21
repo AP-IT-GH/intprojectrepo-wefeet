@@ -42,6 +42,7 @@ public class MatInputController : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        Debug.Log("'t is in de start van de input");
         Forward = false;
         LeftForward = false;
         RightForward = false;
@@ -56,9 +57,7 @@ public class MatInputController : MonoBehaviour
         //detecting the port
         try
         {
-            Debug.Log("'t is in de start van de input");
             comport = AutodetectArduinoPort();
-            Debug.Log("dees komt er ni");
             //creating the reader
             if(comport != null)
             {
