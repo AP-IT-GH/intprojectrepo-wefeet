@@ -4,8 +4,6 @@ using UnityEngine;
 using System.IO.Ports;
 using Microsoft.Win32;
 
-//step1) reading serial input
-//step2) using as a controller
 
 
 public class MatInputController : MonoBehaviour
@@ -177,12 +175,14 @@ public class MatInputController : MonoBehaviour
     {
         if (port != null)
             port.Close();
+        Debug.Log("Connection closed");
     }
 
     private void OnDestroy()
     {
         if (port != null)
             port.Close();
+        Debug.Log("Connection closed");
     }
 
 
