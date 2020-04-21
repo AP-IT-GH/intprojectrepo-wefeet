@@ -11,6 +11,9 @@ public class ShowMenu : MonoBehaviour
     public SteamVR_Input_Sources handType;
     //the gameObject
     public GameObject selectedGameObject;
+
+    private bool TriggerOnOff = false;
+    private bool showMenuOnOff = true;
     
     // Start is called before the first frame update
     void Start()
@@ -18,23 +21,34 @@ public class ShowMenu : MonoBehaviour
         MenuOnOff.AddOnStateDownListener(TriggerDown, handType);
         MenuOnOff.AddOnStateUpListener(TriggerUp, handType);
     }
+    // Update is called once per frame
+    void Update()
+    {
+        MenuOnOff.AddOnStateDownListener(TriggerDown, handType);
+        MenuOnOff.AddOnStateUpListener(TriggerUp, handType);
+    }
 
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        //GameObject.FindWithTag("mainMenuTag").SetActive(true); //werkt niet
-        selectedGameObject.SetActive(false);
+        //selectedGameObject.SetActive(false);
+        if (TriggerOnOff)
+            TriggerOnOff = false;
     }
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        //GameObject.FindWithTag("mainMenuTag").SetActive(false);
-        selectedGameObject.SetActive(true);
-    }
+        //selectedGameObject.SetActive(true);
+        Debug.Log("change menu");
+        if (!TriggerOnOff)
+        {
+            TriggerOnOff = true;
+            showMenuOnOff = !showMenuOnOff;
+            ChangeMenu();
+        }
+    }    
 
-    // Update is called once per frame
-    void Update()
+    private void ChangeMenu()
     {        
-        MenuOnOff.AddOnStateDownListener(TriggerDown, handType);
-        MenuOnOff.AddOnStateUpListener(TriggerUp, handType);
+        selectedGameObject.SetActive(showMenuOnOff);
     }
 }
