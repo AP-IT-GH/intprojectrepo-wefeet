@@ -56,8 +56,9 @@ public class MatInputController : MonoBehaviour
         //detecting the port
         try
         {
+            Debug.Log("'t is in de start van de input");
             comport = AutodetectArduinoPort();
-
+            Debug.Log("dees komt er ni");
             //creating the reader
             if(comport != null)
             {
@@ -65,7 +66,6 @@ public class MatInputController : MonoBehaviour
                 Debug.Log("Arduino connected on port " + comport);
 
                 OpenConnection();
-                Debug.Log("'t is in de start van de input");
             }
             else
             {
@@ -82,13 +82,11 @@ public class MatInputController : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        Debug.Log("'t is potverdekke in den update seg maakt da mee");
         //reading serial data if an arduino is connected
         if (arduinoConnected)
         {
             try
             {
-                Debug.Log("Amai zo ver had k het nu ook weer ni verwacht");
                 string myString = port.ReadLine();
                 lastCompleteInput = myString;
                 port.ReadTimeout = 25;
