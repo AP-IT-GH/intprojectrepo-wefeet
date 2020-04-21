@@ -8,8 +8,8 @@ using Microsoft.Win32;
 
 public class MatInputController : MonoBehaviour
 {
-    string comport = null;
-    private SerialPort port;
+    static string comport = null;
+    private static SerialPort port;
     bool arduinoConnected = false;
     string lastCompleteInput = "000000000,";
 
@@ -25,6 +25,19 @@ public class MatInputController : MonoBehaviour
 
 
 
+
+    public static void CloseTheConnection()
+    {
+        if(port != null)
+        {
+            if (port.IsOpen)
+            {
+                port.Close();
+            }
+            port = null;
+            Debug.Log("Connection terminatoed");
+        }
+    }
 
     // Start is called before the first frame update
     public void Start()
