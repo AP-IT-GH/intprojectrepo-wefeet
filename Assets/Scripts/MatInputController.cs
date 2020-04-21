@@ -154,11 +154,8 @@ public class MatInputController : MonoBehaviour
                 port.Close();
                 Debug.Log("Closing port, because it was already open!");
             }
-            else
-            {
-                port.Open();
-                Debug.Log("Port Opened!");
-            }
+            port.Open();
+            Debug.Log("Port Opened!");
         }
         else
         {
