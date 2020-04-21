@@ -30,13 +30,12 @@ public class ChaChaSlide : MonoBehaviour
     private bool endedConnection = false;
     private float startTime;
     bool begin = false;
+    int numberOfMoves = 18;
 
 
     void Start()
     {
         Mat.Start();
-        //screen.SetActive(true);
-        //startTime = Time.time;
         score = 0;
         currentMove = 0;
     }
@@ -63,43 +62,8 @@ public class ChaChaSlide : MonoBehaviour
         ShowFeet();
 
         #region template
-        /*requiredMove = Move.Moves(currentMove, *movenr*, currentTime, *begintime*, *endtime*, Mat, *string move*);
+        /*requiredMove = Move.Moves(currentMove, *movenr*, currentTime, *begintime*, *endtime*, *offset*, Mat, *string move*);
         checkMove(requiredMove);*/
-        #endregion
-
-        #region both feet center at 0 seconds
-        /*//3 seconds time to complete the move
-        if (currentTime < 3)
-        {
-            if(currentMove == 0)
-            {
-                if (Mat.Center)
-                {
-                    CorrectMove();
-                }
-            }
-        }
-        else
-        {
-            if(currentMove == 0)
-            {
-                IncorrectMove();
-            }
-        }
-        //OR
-        requiredMove = Move.Moves(currentMove, 1, currentTime, 0, 3, Mat);
-        switch (requiredMove)
-        {
-            case Move.moveResponse.Correct:
-                CorrectMove();
-                break;
-            case Move.moveResponse.Incorrect:
-                IncorrectMove();
-                break;
-            default:
-                //waiting, do nothing
-                break;
-        }*/
         #endregion
 
         #region 0
@@ -193,7 +157,7 @@ public class ChaChaSlide : MonoBehaviour
         #endregion
 
         //close connection after final move and destroy this script
-        if(currentMove == 18 && endedConnection == false)
+        if(currentMove == numberOfMoves && endedConnection == false)
         {
             Mat.CloseConnection();
             endedConnection = true;
