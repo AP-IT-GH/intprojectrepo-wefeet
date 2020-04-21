@@ -42,7 +42,6 @@ public class MatInputController : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        Debug.Log("'t is in de start van de input");
         Forward = false;
         LeftForward = false;
         RightForward = false;

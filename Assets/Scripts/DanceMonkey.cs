@@ -35,9 +35,7 @@ public class DanceMonkey : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("A");
         Mat.Start();
-        Debug.Log("B");
         score = 0;
         currentMove = 0;
     }
