@@ -179,6 +179,12 @@ public class MatInputController : MonoBehaviour
             port.Close();
     }
 
+    private void OnDestroy()
+    {
+        if (port != null)
+            port.Close();
+    }
+
 
     //get comport with arduino connected
     private static string AutodetectArduinoPort()
