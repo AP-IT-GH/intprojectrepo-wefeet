@@ -8,7 +8,6 @@ public class danceSceneTrigger : MonoBehaviour
     public GameObject danceMonkey;
     void Start()
     {
-        Debug.Log("pleaseeeeeeeeeeee");
         if(NavBuffer.SongToLoad == "chacha")
         {
             chacha.SetActive(true);
