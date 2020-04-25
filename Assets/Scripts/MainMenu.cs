@@ -22,12 +22,14 @@ public class MainMenu : MonoBehaviour
     public void PlaySong1()
     {
         NavBuffer.SongToLoad = "chacha";
+        MatInputController.CloseTheConnection();
         SceneManager.LoadScene(NavBuffer.BufferSceneToLoad, LoadSceneMode.Single);
     }
 
     public void PlaySong2()
     {
         NavBuffer.SongToLoad = "danceMonkey";
+        MatInputController.CloseTheConnection();
         SceneManager.LoadScene(NavBuffer.BufferSceneToLoad, LoadSceneMode.Single);
     }
 
@@ -38,6 +40,7 @@ public class MainMenu : MonoBehaviour
         // Application.Quit() does not work in the editor so
         // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
 
+        MatInputController.CloseTheConnection();
         Application.Quit();
         EditorApplication.isPlaying = false;
 

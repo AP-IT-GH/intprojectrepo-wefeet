@@ -4,14 +4,12 @@ using UnityEngine;
 using System.IO.Ports;
 using Microsoft.Win32;
 
-//step1) reading serial input
-//step2) using as a controller
 
 
 public class MatInputController : MonoBehaviour
 {
-    string comport = null;
-    private SerialPort port;
+    static string comport = null;
+    private static SerialPort port;
     bool arduinoConnected = false;
     string lastCompleteInput = "000000000,";
 
@@ -27,6 +25,19 @@ public class MatInputController : MonoBehaviour
 
 
 
+
+    public static void CloseTheConnection()
+    {
+        if(port != null)
+        {
+            if (port.IsOpen)
+            {
+                port.Close();
+            }
+            port = null;
+            Debug.Log("Connection terminatoed");
+        }
+    }
 
     // Start is called before the first frame update
     public void Start()
@@ -46,7 +57,6 @@ public class MatInputController : MonoBehaviour
         try
         {
             comport = AutodetectArduinoPort();
-
             //creating the reader
             if(comport != null)
             {
@@ -154,11 +164,8 @@ public class MatInputController : MonoBehaviour
                 port.Close();
                 Debug.Log("Closing port, because it was already open!");
             }
-            else
-            {
-                port.Open();
-                Debug.Log("Port Opened!");
-            }
+            port.Open();
+            Debug.Log("Port Opened!");
         }
         else
         {
@@ -180,6 +187,14 @@ public class MatInputController : MonoBehaviour
     {
         if (port != null)
             port.Close();
+        Debug.Log("Connection closed");
+    }
+
+    private void OnDestroy()
+    {
+        if (port != null)
+            port.Close();
+        Debug.Log("Connection closed");
     }
 
 
