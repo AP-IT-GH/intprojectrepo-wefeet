@@ -207,17 +207,20 @@ public class MatInputController : MonoBehaviour
         string temp;
         foreach (string s3 in rk2.GetSubKeyNames())
         {
+            //Debug.Log("s3: " + s3);
             RegistryKey rk3 = rk2.OpenSubKey(s3);
             foreach (string s in rk3.GetSubKeyNames())
             {
+                //Debug.Log("s: " + s);
                 if (s.Contains("VID") && s.Contains("PID"))
                 {
                     RegistryKey rk4 = rk3.OpenSubKey(s);
                     foreach (string s2 in rk4.GetSubKeyNames())
                     {
-                        RegistryKey rk5 = rk4.OpenSubKey(s2);                        
+                        RegistryKey rk5 = rk4.OpenSubKey(s2);
 
-                        if ((temp = (string)rk5.GetValue("FriendlyName")) != null && temp.Contains("USB Serial Port"))
+                        //Debug.Log((string)rk5.GetValue("FriendlyName"));
+                        if ((temp = (string)rk5.GetValue("FriendlyName")) != null && temp.Contains("Arduino"))
                         {
                             RegistryKey rk6 = rk5.OpenSubKey("Device Parameters");
                             if (rk6 != null && (temp = (string)rk6.GetValue("PortName")) != null)

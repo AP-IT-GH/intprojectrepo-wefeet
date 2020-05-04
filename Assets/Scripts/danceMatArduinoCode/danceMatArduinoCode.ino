@@ -42,7 +42,7 @@ void loop()
 // print the results to the Serial Monitor:
     if (stringOut != stringOutBuffer)
     {
-        Serial.print(stringOut);
+        Serial.println(stringOut);
     }
     // send the 'leds' array out to the actual LED strip
     FastLED.show();

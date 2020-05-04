@@ -38,7 +38,7 @@ public class ShowMenu : MonoBehaviour
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         //selectedGameObject.SetActive(true);
-        Debug.Log("change menu");
+        //Debug.Log("change menu");
         if (!TriggerOnOff)
         {
             TriggerOnOff = true;
