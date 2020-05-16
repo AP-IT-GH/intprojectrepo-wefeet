@@ -24,5 +24,13 @@ namespace Valve.VR
                 return SteamVR_Actions.menuButton1_MenuOpen;
             }
         }
+        
+        public virtual SteamVR_Action_Boolean MenuInteraction
+        {
+            get
+            {
+                return SteamVR_Actions.menuButton1_MenuInteraction;
+            }
+        }
     }
 }
