@@ -8095,7 +8095,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1042181705, guid: 9a5b536201870214190e286af4f6f8cd, type: 3}
       propertyPath: m_ClickAction.actionPath
-      value: /actions/default/in/InteractUI
+      value: /actions/MenuButton1/in/MenuInteraction
       objectReference: {fileID: 0}
     - target: {fileID: 1042181705, guid: 9a5b536201870214190e286af4f6f8cd, type: 3}
       propertyPath: m_TargetSource
@@ -8103,7 +8103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1042181705, guid: 9a5b536201870214190e286af4f6f8cd, type: 3}
       propertyPath: m_ClickAction.needsReinit
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1042181705, guid: 9a5b536201870214190e286af4f6f8cd, type: 3}
       propertyPath: m_Enabled

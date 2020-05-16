@@ -85,6 +85,10 @@
     {
       "name": "/actions/MenuButton1/in/MenuOpen",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/MenuButton1/in/MenuInteraction",
+      "type": "boolean"
     }
   ],
   "action_sets": [
