@@ -62,5 +62,5 @@ MonoBehaviour:
   m_Camera: {fileID: 0}
   m_TargetSource: 2
   m_ClickAction:
-    actionPath: /actions/default/in/Teleport
+    actionPath: /actions/default/in/InteractUI
     needsReinit: 0
