@@ -28,6 +28,7 @@ public class RecordCustomSong : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Mat.Start();
         RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
         RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
     }
@@ -35,6 +36,7 @@ public class RecordCustomSong : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Mat.Update();
         RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
         RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
     }
@@ -54,8 +56,35 @@ public class RecordCustomSong : MonoBehaviour
         {
             TriggerOnOff = true;
             //  Add new move
-            moves.Add(new CustomMove(prevTime, currTime, "000000000")); // TODO: Change by input mat
+            moves.Add(new CustomMove(prevTime, currTime, LookAtMove())); 
+        }        
+    }
+
+    private string LookAtMove()
+    {
+        string move = "";
+
+        List<bool> tiles = new List<bool>();
+
+        tiles[0] = Mat.LeftForward;
+        tiles[1] = Mat.Forward;
+        tiles[2] = Mat.RightForward;
+        tiles[3] = Mat.Left;
+        tiles[4] = Mat.Center;
+        tiles[5] = Mat.Right;
+        tiles[6] = Mat.LeftBackward;
+        tiles[7] = Mat.Backward;
+        tiles[8] = Mat.RightBackward;
+
+        foreach (var state in tiles)
+        {
+            if (state == true)
+                move += "1";
+            else
+                move += "0";
         }
+
+        return move;
     }
 
     private void WriteCsv()
