@@ -50,10 +50,6 @@
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/OpenMenu1",
-      "type": "boolean"
-    },
-    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },

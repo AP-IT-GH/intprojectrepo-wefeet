@@ -4840,7 +4840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuOnOff:
-    actionPath: /actions/default/in/OpenMenu1
+    actionPath: /actions/MenuButton1/in/MenuOpen
     needsReinit: 0
   handType: 0
   selectedGameObject: {fileID: 771714385}
@@ -8130,6 +8130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1784969071}
     m_Modifications:
+    - target: {fileID: 1042181705, guid: 9a5b536201870214190e286af4f6f8cd, type: 3}
+      propertyPath: m_ClickAction.actionPath
+      value: /actions/default/in/GrabPinch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1042181705, guid: 9a5b536201870214190e286af4f6f8cd, type: 3}
+      propertyPath: m_TargetSource
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1042181706, guid: 9a5b536201870214190e286af4f6f8cd, type: 3}
       propertyPath: m_sendNavigationEvents
       value: 0
