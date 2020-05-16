@@ -22,13 +22,15 @@ public class RecordCustomSong : MonoBehaviour
     private bool TriggerOnOff = false;
 
     // Timings
-    private float prevTime = 0;
-    private float currTime = 0;
+    private float prevTime = 0f;
+    private float currTime = 0f;
+    private float timer = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         Mat.Start();
+        timer = 0f;
         RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
         RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
     }
@@ -37,6 +39,7 @@ public class RecordCustomSong : MonoBehaviour
     void Update()
     {
         Mat.Update();
+        timer += Time.deltaTime;
         RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
         RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
     }
@@ -56,7 +59,9 @@ public class RecordCustomSong : MonoBehaviour
         {
             TriggerOnOff = true;
             //  Add new move
-            moves.Add(new CustomMove(prevTime, currTime, LookAtMove())); 
+            currTime = timer;
+            moves.Add(new CustomMove(prevTime, currTime, LookAtMove()));
+            prevTime = currTime;
         }        
     }
 
