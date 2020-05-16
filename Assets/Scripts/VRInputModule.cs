@@ -39,12 +39,7 @@ public class VRInputModule : BaseInputModule
 
         // Press
         if (m_ClickAction.GetStateDown(m_TargetSource))
-        {
-            Debug.Log("hand press");
-            Debug.Log(m_ClickAction.GetShortName());
             ProcessPress(m_Data);
-        }
-
 
         // Release
         if (m_ClickAction.GetStateUp(m_TargetSource))
