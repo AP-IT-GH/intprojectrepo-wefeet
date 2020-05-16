@@ -29,8 +29,10 @@ public class RecordCustomSong : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Start Mat & Timer
         Mat.Start();
         timer = 0f;
+        // INPUT
         RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
         RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
     }
@@ -38,23 +40,22 @@ public class RecordCustomSong : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Update Mat & Timer
         Mat.Update();
         timer += Time.deltaTime;
+        // INPUT
         RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
         RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
     }
 
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        //selectedGameObject.SetActive(false);
         if (TriggerOnOff)
             TriggerOnOff = false;
     }
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
-        //selectedGameObject.SetActive(true);
-        //Debug.Log("change menu");
+    {        
         if (!TriggerOnOff)
         {
             TriggerOnOff = true;
