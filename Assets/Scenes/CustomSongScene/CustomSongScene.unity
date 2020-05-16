@@ -21212,7 +21212,7 @@ GameObject:
   - component: {fileID: 2084690366}
   - component: {fileID: 2084690365}
   m_Layer: 0
-  m_Name: testtrigger
+  m_Name: playTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21231,9 +21231,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   csvName: test.csv
-  offset: 0
-  tiles: []
-  lights: []
+  tiles:
+  - {fileID: 124164347}
+  - {fileID: 1473166249}
+  - {fileID: 1929876101}
+  - {fileID: 1900101903}
+  - {fileID: 1093260208}
+  - {fileID: 1853388958}
+  - {fileID: 1432672848}
+  - {fileID: 1501478373}
+  - {fileID: 575510480}
+  lights:
+  - {fileID: 495347735}
+  - {fileID: 140411298}
+  - {fileID: 3952224}
 --- !u!4 &2084690366
 Transform:
   m_ObjectHideFlags: 0
