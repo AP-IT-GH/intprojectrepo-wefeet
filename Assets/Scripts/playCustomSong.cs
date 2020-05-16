@@ -14,9 +14,13 @@ public class playCustomSong : MonoBehaviour
     [Tooltip(@"the csv files should be located in intprojectrepo-wefeet\songScripts ")] ///-----TODO-----
     public string csvName = "test.csv";
 
-    [Header("Add the 9 tiles")]
+    [Header("Add the 9 floor tiles")]
     [Tooltip("start by the top left tile, then the one to the right and so on, then move down a row")]
     public GameObject[] tiles;
+
+    [Header("Add the 9 screen tiles")]
+    [Tooltip("start by the top left tile, then the one to the right and so on, then move down a row")]
+    public GameObject[] screenTiles;
 
     public int Score { get => score; }
 
@@ -31,6 +35,8 @@ public class playCustomSong : MonoBehaviour
     int numberOfMoves;
 
     public string song { get; private set; }
+
+    public string currentMoveString = "000000000";
 
 
     List<CustomMove> moves = new List<CustomMove>();
@@ -58,7 +64,7 @@ public class playCustomSong : MonoBehaviour
         Debug.Log("nr of moves: " + numberOfMoves);
 
         //setup mat and scene
-        Mat.Start();
+        //Mat.Start();
         score = 0;
         currentMove = 0;
     }
@@ -66,7 +72,7 @@ public class playCustomSong : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Mat.Update();
+        //Mat.Update();
 
         if (!begin)
         {
@@ -82,11 +88,12 @@ public class playCustomSong : MonoBehaviour
             changeLight(Color.white, float.MaxValue);
         }
         ShowFeet();
+        ShowMove();
 
         int movenr = 0;
         foreach (CustomMove move in moves)
         {
-            MoveAction(move.CheckMove(currentMove, currentTime, Mat, movenr));
+            MoveAction(move.CheckMove(currentMove, currentTime, Mat, movenr, this));
             movenr++;
         }
 
@@ -98,8 +105,28 @@ public class playCustomSong : MonoBehaviour
             endedConnection = true;
 
             changeLight(Color.white, float.MaxValue);
+            currentMoveString = "000000000";
+            ShowMove();
             Destroy(this);
         }
+    }
+
+    private void ShowMove() //visually show where your feet are
+    {
+        for (int i = 0; i < screenTiles.Length; i++)
+        {
+            screenTiles[i].SetActive(false);
+        }
+        
+        if (currentMoveString[0] == '1') screenTiles[0].SetActive(true);
+        if (currentMoveString[1] == '1') screenTiles[1].SetActive(true);
+        if (currentMoveString[2] == '1') screenTiles[2].SetActive(true);
+        if (currentMoveString[3] == '1') screenTiles[3].SetActive(true);
+        if (currentMoveString[4] == '1') screenTiles[4].SetActive(true);
+        if (currentMoveString[5] == '1') screenTiles[5].SetActive(true);
+        if (currentMoveString[6] == '1') screenTiles[6].SetActive(true);
+        if (currentMoveString[7] == '1') screenTiles[7].SetActive(true);
+        if (currentMoveString[8] == '1') screenTiles[8].SetActive(true);
     }
 
     private void ShowFeet() //visually show where your feet are
@@ -185,12 +212,14 @@ public class CustomMove
         this.move = Move;
     }
 
-    public moveResponse CheckMove(int currentMove, float currentTime, MatInputController Mat, int moveNumber)
+    public moveResponse CheckMove(int currentMove, float currentTime, MatInputController Mat, int moveNumber, playCustomSong baseClass)
     {
         if (currentTime > beginTime && currentTime < endTime)
         {
             if (currentMove == moveNumber)
             {
+                baseClass.currentMoveString = this.move;
+
                 List<bool> moves = new List<bool>();
                 foreach (char item in move)
                 {
