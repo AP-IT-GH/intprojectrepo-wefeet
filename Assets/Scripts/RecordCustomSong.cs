@@ -68,7 +68,7 @@ public class RecordCustomSong : MonoBehaviour
             //  Add new move
             currTime = timer;
             Debug.Log("Add move: " + prevTime + ";" + currTime + ";" + LookAtMove());
-            moves.Add(new CustomMove(prevTime, currTime, LookAtMove()));
+            moves.Add(new CustomMove(currTime, prevTime, LookAtMove()));
             prevTime = currTime;
             maxMoves++;
             Debug.Log("Lengt array: " + moves.Count);
