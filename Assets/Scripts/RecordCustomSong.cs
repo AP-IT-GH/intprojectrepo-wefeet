@@ -86,15 +86,15 @@ public class RecordCustomSong : MonoBehaviour
 
         List<bool> FloorTiles = new List<bool>();
 
-        FloorTiles[0] = Mat.LeftForward;
-        FloorTiles[1] = Mat.Forward;
-        FloorTiles[2] = Mat.RightForward;
-        FloorTiles[3] = Mat.Left;
-        FloorTiles[4] = Mat.Center;
-        FloorTiles[5] = Mat.Right;
-        FloorTiles[6] = Mat.LeftBackward;
-        FloorTiles[7] = Mat.Backward;
-        FloorTiles[8] = Mat.RightBackward;
+        FloorTiles.Add(Mat.LeftForward);
+        FloorTiles.Add(Mat.Forward);
+        FloorTiles.Add(Mat.RightForward);
+        FloorTiles.Add(Mat.Left);
+        FloorTiles.Add(Mat.Center);
+        FloorTiles.Add(Mat.Right);
+        FloorTiles.Add(Mat.LeftBackward);
+        FloorTiles.Add(Mat.Backward);
+        FloorTiles.Add(Mat.RightBackward);
 
         foreach (var state in FloorTiles)
         {
