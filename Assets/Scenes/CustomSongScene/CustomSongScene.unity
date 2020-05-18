@@ -1498,7 +1498,7 @@ Transform:
   m_LocalScale: {x: 0.28366, y: 0.00028366002, z: 0.28366}
   m_Children: []
   m_Father: {fileID: 512849839}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &124164349
 SphereCollider:
@@ -5814,11 +5814,11 @@ Transform:
   - {fileID: 26123346}
   - {fileID: 417135485}
   - {fileID: 1024343184}
+  - {fileID: 1093260209}
   - {fileID: 124164348}
   - {fileID: 1473166250}
   - {fileID: 1929876102}
   - {fileID: 1900101904}
-  - {fileID: 1093260209}
   - {fileID: 1853388959}
   - {fileID: 1432672849}
   - {fileID: 1501478374}
@@ -12690,7 +12690,7 @@ Transform:
   m_LocalScale: {x: 0.28366, y: 0.00028366002, z: 0.28366}
   m_Children: []
   m_Father: {fileID: 512849839}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1093260210
 SphereCollider:
@@ -16993,7 +16993,7 @@ Transform:
   m_LocalScale: {x: 0.28366, y: 0.00028366002, z: 0.28366}
   m_Children: []
   m_Father: {fileID: 512849839}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1473166251
 SphereCollider:
@@ -21564,7 +21564,7 @@ Transform:
   m_LocalScale: {x: 0.28366, y: 0.00028366002, z: 0.28366}
   m_Children: []
   m_Father: {fileID: 512849839}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1900101905
 SphereCollider:
@@ -21793,7 +21793,7 @@ Transform:
   m_LocalScale: {x: 0.28366, y: 0.00028366002, z: 0.28366}
   m_Children: []
   m_Father: {fileID: 512849839}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1929876103
 SphereCollider:
@@ -23272,6 +23272,7 @@ GameObject:
   - component: {fileID: 2084690366}
   - component: {fileID: 2084690365}
   - component: {fileID: 2084690367}
+  - component: {fileID: 2084690368}
   m_Layer: 0
   m_Name: playTrigger
   m_TagString: Untagged
@@ -23291,7 +23292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f2a6801b4b1c54590988b34ccb95bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvName: test.csv
   tiles:
   - {fileID: 124164347}
   - {fileID: 1473166249}
@@ -23302,25 +23302,12 @@ MonoBehaviour:
   - {fileID: 1432672848}
   - {fileID: 1501478373}
   - {fileID: 575510480}
-  screenTiles:
-  - {fileID: 1498006671}
-  - {fileID: 1582448313}
-  - {fileID: 54713659}
-  - {fileID: 773079174}
-  - {fileID: 1584919900}
-  - {fileID: 14822211}
-  - {fileID: 1070055537}
-  - {fileID: 1799783302}
-  - {fileID: 443860634}
-  progressbar: {fileID: 555690696}
-  lights:
-  - {fileID: 495347735}
-  - {fileID: 140411298}
-  - {fileID: 3952224}
-  currentMoveString: 000000000
   song: TheBigEmptySong
   RecordTrigger:
     actionPath: /actions/default/in/OpenMenu1
+    needsReinit: 0
+  StopRecording:
+    actionPath: 
     needsReinit: 0
   handType: 0
 --- !u!4 &2084690366
@@ -23352,7 +23339,46 @@ MonoBehaviour:
   textField: {fileID: 372443404}
   scoreScript1: {fileID: 0}
   scoreScript2: {fileID: 0}
-  scoreScriptDefault: {fileID: 2084690365}
+  scoreScriptDefault: {fileID: 0}
+--- !u!114 &2084690368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084690364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b9ba7d8077c06459851700a647e6e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvName: test.csv
+  tiles:
+  - {fileID: 124164347}
+  - {fileID: 1473166249}
+  - {fileID: 1929876101}
+  - {fileID: 1900101903}
+  - {fileID: 1093260208}
+  - {fileID: 1853388958}
+  - {fileID: 1432672848}
+  - {fileID: 1501478373}
+  - {fileID: 575510480}
+  screenTiles:
+  - {fileID: 1498006671}
+  - {fileID: 1582448313}
+  - {fileID: 54713659}
+  - {fileID: 773079174}
+  - {fileID: 1584919900}
+  - {fileID: 14822211}
+  - {fileID: 1070055537}
+  - {fileID: 1799783302}
+  - {fileID: 443860634}
+  progressbar: {fileID: 555690696}
+  lights:
+  - {fileID: 495347735}
+  - {fileID: 140411298}
+  - {fileID: 3952224}
+  currentMoveString: 000000000
 --- !u!4 &2089493268 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2397067419243997937, guid: ed8dea2628646f547bd9216dd66a4786,
