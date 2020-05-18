@@ -8006,6 +8006,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd58e8b320ae14469bd5ad9ef5a93d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
+  soundPath: 
 --- !u!4 &2083278293
 Transform:
   m_ObjectHideFlags: 0
