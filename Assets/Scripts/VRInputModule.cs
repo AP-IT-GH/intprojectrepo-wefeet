@@ -44,6 +44,7 @@ public class VRInputModule : BaseInputModule
         // Release
         if (m_ClickAction.GetStateUp(m_TargetSource))
             ProcessRelease(m_Data);
+
     }
 
     public PointerEventData GetData()
