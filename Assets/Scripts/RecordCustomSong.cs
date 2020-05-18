@@ -16,10 +16,10 @@ public class RecordCustomSong : MonoBehaviour
 
     // Moves
     List<CustomMove> moves = new List<CustomMove>();
-    private int maxMoves = 0;
 
     // UI Input    
-    public SteamVR_Action_Boolean RecordTrigger;    
+    public SteamVR_Action_Boolean RecordTrigger;
+    public SteamVR_Action_Boolean StopRecording;
     public SteamVR_Input_Sources handType;
     private bool TriggerOnOff = false;
 
@@ -37,6 +37,7 @@ public class RecordCustomSong : MonoBehaviour
         // INPUT
         RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
         RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
+        StopRecording.AddOnStateDownListener(StopTrigger, handType);
     }
 
     // Update is called once per frame
@@ -56,19 +57,19 @@ public class RecordCustomSong : MonoBehaviour
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {        
-        if (!TriggerOnOff && maxMoves <5)
+        if (!TriggerOnOff)
         {
             TriggerOnOff = true;
             //  Add new move
             currTime = timer;            
             moves.Add(new CustomMove(prevTime, currTime, LookAtMove()));
-            prevTime = currTime;
-            maxMoves++;            
-        }        
-        else if(!TriggerOnOff && maxMoves >= 5)
-        {
-            WriteCsv();
-        }
+            prevTime = currTime;                      
+        }           
+    }
+
+    public void StopTrigger(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    {
+        WriteCsv();
     }
 
     private string LookAtMove()
