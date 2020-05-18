@@ -62,7 +62,7 @@ public class RecordCustomSong : MonoBehaviour
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         Debug.Log("Trigger down");
-        if (!TriggerOnOff && maxMoves <10)
+        if (!TriggerOnOff && maxMoves <5)
         {
             TriggerOnOff = true;
             //  Add new move
@@ -74,7 +74,7 @@ public class RecordCustomSong : MonoBehaviour
             Debug.Log("Lengt array: " + moves.Count);
             Debug.Log("Counted moves: " + maxMoves);
         }        
-        else if(!TriggerOnOff && maxMoves > 10)
+        else if(!TriggerOnOff && maxMoves >= 5)
         {
             WriteCsv();
         }
