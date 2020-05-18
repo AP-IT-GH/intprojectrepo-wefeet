@@ -84,19 +84,19 @@ public class RecordCustomSong : MonoBehaviour
     {
         string move = "";
 
-        List<bool> tiles = new List<bool>();
+        List<bool> FloorTiles = new List<bool>();
 
-        tiles[0] = Mat.LeftForward;
-        tiles[1] = Mat.Forward;
-        tiles[2] = Mat.RightForward;
-        tiles[3] = Mat.Left;
-        tiles[4] = Mat.Center;
-        tiles[5] = Mat.Right;
-        tiles[6] = Mat.LeftBackward;
-        tiles[7] = Mat.Backward;
-        tiles[8] = Mat.RightBackward;
+        FloorTiles[0] = Mat.LeftForward;
+        FloorTiles[1] = Mat.Forward;
+        FloorTiles[2] = Mat.RightForward;
+        FloorTiles[3] = Mat.Left;
+        FloorTiles[4] = Mat.Center;
+        FloorTiles[5] = Mat.Right;
+        FloorTiles[6] = Mat.LeftBackward;
+        FloorTiles[7] = Mat.Backward;
+        FloorTiles[8] = Mat.RightBackward;
 
-        foreach (var state in tiles)
+        foreach (var state in FloorTiles)
         {
             if (state == true)
                 move += "1";
