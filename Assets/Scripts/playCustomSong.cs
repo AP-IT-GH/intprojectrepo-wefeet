@@ -67,7 +67,7 @@ public class playCustomSong : MonoBehaviour
         Debug.Log("nr of moves: " + numberOfMoves);
 
         //setup mat and scene
-        //Mat.Start();
+        Mat.Start();
         score = 0;
         currentMove = 0;
     }
@@ -75,7 +75,7 @@ public class playCustomSong : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Mat.Update();
+        Mat.Update();
 
         if (!begin)
         {
@@ -109,7 +109,11 @@ public class playCustomSong : MonoBehaviour
 
             changeLight(Color.white, float.MaxValue);
             currentMoveString = "000000000";
-            ShowMove();
+            for (int i = 0; i < screenTiles.Length; i++)
+            {
+                screenTiles[i].SetActive(false);
+            }
+
             Destroy(this);
         }
     }
