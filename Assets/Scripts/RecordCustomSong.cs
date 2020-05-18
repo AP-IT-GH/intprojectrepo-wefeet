@@ -10,11 +10,12 @@ public class RecordCustomSong : MonoBehaviour
     private MatInputController Mat = new MatInputController();
 
     // CSV
-    public string csvName = "test.csv";
+    private string csvName = "test.csv";
     public string song { get; set; }
 
     // Moves
     List<CustomMove> moves = new List<CustomMove>();
+    public int maxMoves = 10;
 
     // UI Input    
     public SteamVR_Action_Boolean RecordTrigger;    
@@ -56,14 +57,19 @@ public class RecordCustomSong : MonoBehaviour
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {        
-        if (!TriggerOnOff)
+        if (!TriggerOnOff && maxMoves <10)
         {
             TriggerOnOff = true;
             //  Add new move
             currTime = timer;
             moves.Add(new CustomMove(prevTime, currTime, LookAtMove()));
             prevTime = currTime;
+            maxMoves++;
         }        
+        else
+        {
+            WriteCsv();
+        }
     }
 
     private string LookAtMove()
@@ -97,7 +103,7 @@ public class RecordCustomSong : MonoBehaviour
     {
         csvName = "Dance-" + song;
 
-        StreamWriter writer = new StreamWriter(@"songScripts\" + csvName);
+        StreamWriter writer = new StreamWriter(@"songScripts\" + csvName + ".csv");
 
         writer.WriteLine(song + ";;"); //First line = songname
 
@@ -107,5 +113,7 @@ public class RecordCustomSong : MonoBehaviour
         }
 
         writer.Close();
+
+        Destroy(this);
     }
 }
