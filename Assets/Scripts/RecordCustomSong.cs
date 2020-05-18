@@ -49,8 +49,8 @@ public class RecordCustomSong : MonoBehaviour
         ShowFeet();
         timer += Time.deltaTime;
         // INPUT
-        RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
-        RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
+        //RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
+        //RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
     }
 
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -74,7 +74,7 @@ public class RecordCustomSong : MonoBehaviour
             Debug.Log("Lengt array: " + moves.Count);
             Debug.Log("Counted moves: " + maxMoves);
         }        
-        else
+        else if(TriggerOnOff && maxMoves > 10)
         {
             WriteCsv();
         }
