@@ -161,7 +161,7 @@ public class CustomMove
     public CustomMove(float BeginTime, float EndTime, string Move)
     {
         this.beginTime = BeginTime;
-        this.endTime = endTime;
+        this.endTime = EndTime;
         this.move = Move;
     }
 
