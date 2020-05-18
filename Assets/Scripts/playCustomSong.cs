@@ -8,7 +8,7 @@ using UnityEngine;
 public class playCustomSong : MonoBehaviour
 {
     protected MatInputController Mat = new MatInputController();
-    private int currentMove = 0;
+    protected int currentMove = 0;
     private int score = 0;
 
     [Tooltip(@"the csv files should be located in intprojectrepo-wefeet\songScripts ")] ///-----TODO-----
@@ -22,6 +22,8 @@ public class playCustomSong : MonoBehaviour
     [Tooltip("start by the top left tile, then the one to the right and so on, then move down a row")]
     public GameObject[] screenTiles;
 
+    public GameObject progressbar;
+
     public int Score { get => score; }
 
     [Header("Changing lights")]
@@ -33,6 +35,7 @@ public class playCustomSong : MonoBehaviour
     private float startTime;
     bool begin = false;
     int numberOfMoves;
+    protected float currentTime;
 
     public string song { get; private set; }
 
@@ -80,7 +83,7 @@ public class playCustomSong : MonoBehaviour
             begin = true;
         }
 
-        float currentTime = Time.time - startTime;
+        currentTime = Time.time - startTime;
 
         timer -= Time.deltaTime;
         if (timer <= 0)
@@ -127,6 +130,21 @@ public class playCustomSong : MonoBehaviour
         if (currentMoveString[6] == '1') screenTiles[6].SetActive(true);
         if (currentMoveString[7] == '1') screenTiles[7].SetActive(true);
         if (currentMoveString[8] == '1') screenTiles[8].SetActive(true);
+
+        ShowProgressBar();
+    }
+
+    private void ShowProgressBar()
+    {
+        float progress;
+        //calculate % of bar
+        float totalMoveTime = moves[currentMove].endTime - moves[currentMove].beginTime;
+        float currentMoveTime = currentTime - moves[currentMove].beginTime;
+        progress = currentMoveTime / totalMoveTime;
+
+
+        //show % on bar
+        progressbar.transform.localScale = new Vector3(1,progress,0.5f);
     }
 
     private void ShowFeet() //visually show where your feet are
