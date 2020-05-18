@@ -8,6 +8,7 @@ public class RecordCustomSong : MonoBehaviour
 {
     // MAT
     private MatInputController Mat = new MatInputController();
+    public GameObject[] tiles;
 
     // CSV
     private string csvName = "test.csv";
@@ -45,6 +46,7 @@ public class RecordCustomSong : MonoBehaviour
     {
         // Update Mat & Timer
         Mat.Update();
+        ShowFeet();
         timer += Time.deltaTime;
         // INPUT
         RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
@@ -103,6 +105,23 @@ public class RecordCustomSong : MonoBehaviour
         }
 
         return move;
+    }
+
+    private void ShowFeet() //visually show where your feet are
+    {
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            tiles[i].SetActive(false);
+        }
+        if (Mat.LeftForward) tiles[0].SetActive(true);
+        if (Mat.Forward) tiles[1].SetActive(true);
+        if (Mat.RightForward) tiles[2].SetActive(true);
+        if (Mat.Left) tiles[3].SetActive(true);
+        if (Mat.Center) tiles[4].SetActive(true);
+        if (Mat.Right) tiles[5].SetActive(true);
+        if (Mat.LeftBackward) tiles[6].SetActive(true);
+        if (Mat.Backward) tiles[7].SetActive(true);
+        if (Mat.RightBackward) tiles[8].SetActive(true);
     }
 
     private void WriteCsv()
