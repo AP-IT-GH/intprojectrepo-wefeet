@@ -11,11 +11,11 @@ public class RecordCustomSong : MonoBehaviour
 
     // CSV
     private string csvName = "test.csv";
-    public string song { get; set; }
+    public string song = "TheBigEmptySong";
 
     // Moves
     List<CustomMove> moves = new List<CustomMove>();
-    public int maxMoves = 10;
+    private int maxMoves = 0;
 
     // UI Input    
     public SteamVR_Action_Boolean RecordTrigger;    
@@ -36,6 +36,8 @@ public class RecordCustomSong : MonoBehaviour
         // INPUT
         RecordTrigger.AddOnStateDownListener(TriggerDown, handType);
         RecordTrigger.AddOnStateUpListener(TriggerUp, handType);
+
+        Debug.Log("Script started :)");
     }
 
     // Update is called once per frame
@@ -50,21 +52,25 @@ public class RecordCustomSong : MonoBehaviour
     }
 
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
+    {        
         if (TriggerOnOff)
             TriggerOnOff = false;
     }
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {        
+    {
+        Debug.Log("Trigger down");
         if (!TriggerOnOff && maxMoves <10)
         {
             TriggerOnOff = true;
             //  Add new move
             currTime = timer;
+            Debug.Log("Add move: " + prevTime + ";" + currTime + ";" + LookAtMove());
             moves.Add(new CustomMove(prevTime, currTime, LookAtMove()));
             prevTime = currTime;
             maxMoves++;
+            Debug.Log("Lengt array: " + moves.Count);
+            Debug.Log("Counted moves: " + maxMoves);
         }        
         else
         {
@@ -101,6 +107,7 @@ public class RecordCustomSong : MonoBehaviour
 
     private void WriteCsv()
     {
+        Debug.Log("Write csv");
         csvName = "Dance-" + song;
 
         StreamWriter writer = new StreamWriter(@"songScripts\" + csvName + ".csv");
