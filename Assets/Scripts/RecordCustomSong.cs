@@ -74,7 +74,7 @@ public class RecordCustomSong : MonoBehaviour
             Debug.Log("Lengt array: " + moves.Count);
             Debug.Log("Counted moves: " + maxMoves);
         }        
-        else if(TriggerOnOff && maxMoves > 10)
+        else if(!TriggerOnOff && maxMoves > 10)
         {
             WriteCsv();
         }
