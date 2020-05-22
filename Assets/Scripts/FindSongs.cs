@@ -6,11 +6,12 @@ using System.IO;
 
 public class FindSongs : MonoBehaviour
 {
-    public ArrayList songs = new ArrayList();
+    public static ArrayList songs = new ArrayList();
     string path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
     string result;
+    public static ArrayList songsInProject = new ArrayList();
 
-    void Start()
+void Start()
     {
         //ArrayList met alle namen
         foreach (string file in Directory.GetFiles(path, "*.mp3"))
@@ -22,23 +23,27 @@ public class FindSongs : MonoBehaviour
         //Alle files van C:\user\hans\music => kopieren naar => \Assets\StreamingAssets\Sound
         foreach (string file in songs)
         {
-            Debug.Log($"file: {file}");
+            //Debug.Log($"file: {file}");
 
             string str = Application.streamingAssetsPath + "/Sound/" + file.ToString();
-            Debug.Log($"str: {str}");
-            Debug.Log($@"From: {path}\{file}");
+            //Debug.Log($"str: {str}");
+            //Debug.Log($@"From: {path}\{file}");
 
             if (!File.Exists(str))
             {
                 File.Copy($@"{path}\{file}", str);
-                Debug.Log($"Copied from: --- {$@"{path}\{file}"} --- to --- {str} ---");
+                //Debug.Log($"Copied from: --- {$@"{path}\{file}"} --- to --- {str} ---");
             }
-            else{ Debug.Log("File already excits"); }
+            else { Debug.Log("File already excits"); }
+        }
+
+        foreach (string file in Directory.GetFiles(Application.streamingAssetsPath + "/Sound/", "*.mp3"))
+        {
+            result = Path.GetFileName(file);
+            songsInProject.Add(result);
         }
     }
     
-
-
     /*
      * 
     //https://www.youtube.com/watch?v=9gAHZGArDgU
