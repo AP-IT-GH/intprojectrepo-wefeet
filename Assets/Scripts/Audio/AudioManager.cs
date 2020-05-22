@@ -16,9 +16,9 @@ public class AudioManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {      
     }
+
     public void ChangeBackGroundMusic(AudioClip music)
     {
         //if there is a trigger that will play the same music file. It won't trigger
