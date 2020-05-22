@@ -23304,10 +23304,10 @@ MonoBehaviour:
   - {fileID: 575510480}
   song: TheBigEmptySong
   RecordTrigger:
-    actionPath: /actions/MenuButton1/in/MenuInteraction
+    actionPath: /actions/default/in/OpenMenu1
     needsReinit: 0
   StopRecording:
-    actionPath: /actions/MenuButton1/in/MenuOpen
+    actionPath: 
     needsReinit: 0
   handType: 0
 --- !u!4 &2084690366
