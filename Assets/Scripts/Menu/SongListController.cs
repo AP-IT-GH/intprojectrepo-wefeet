@@ -13,6 +13,12 @@ public class SongListController : MonoBehaviour
         @"c:\test\test\song3.mp3",
         @"c:\test\test\song4.mp3",
         @"c:\test\test\song5.mp3",
+        @"c:\test\test\song6.mp3",
+        @"c:\test\test\song7.mp3",
+        @"c:\test\test\song8.mp3",
+        @"c:\test\test\song9.mp3",
+        @"c:\test\test\song10.mp3",
+        @"c:\test\test\song11.mp3",
         @"c:\test\test\randomLongSongNameToTest.mp3",
         @"c:\test\test\ChaCha.mp3",
         @"c:\test\test\Dance_Monkey.mp3",
@@ -36,7 +42,6 @@ public class SongListController : MonoBehaviour
         }    
     }
 
-    //what needs to happen when you press the button
     public void ButtonClicked(string myTextString)
     {
         Debug.Log(myTextString);

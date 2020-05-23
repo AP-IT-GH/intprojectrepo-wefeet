@@ -21,7 +21,6 @@ public class SongListButton : MonoBehaviour
 
     public void OnClick()
     {
-
         songListController.ButtonClicked(myTextString);
     }
 }
