@@ -9476,7 +9476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23339,7 +23339,7 @@ MonoBehaviour:
   textField: {fileID: 372443404}
   scoreScript1: {fileID: 0}
   scoreScript2: {fileID: 0}
-  scoreScriptDefault: {fileID: 0}
+  scoreScriptDefault: {fileID: 2084690368}
 --- !u!114 &2084690368
 MonoBehaviour:
   m_ObjectHideFlags: 0
