@@ -23,7 +23,9 @@ public class showScore : MonoBehaviour
         if (scoreScript1 != null) score = scoreScript1.Score;
         else if (scoreScript2 != null) score = scoreScript2.Score;
         //default
-        else score = scoreScriptDefault.Score;
+        else if (scoreScriptDefault != null) score = scoreScriptDefault.Score;
+        //anders script afsluiten
+        else Destroy(this);
 
         textField.changeScore(score);
     }
