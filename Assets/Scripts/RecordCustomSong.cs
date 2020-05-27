@@ -118,7 +118,7 @@ public class RecordCustomSong : MonoBehaviour
 
     private void WriteCsv()
     {        
-        csvName = "Dance-" + song;
+        csvName = song;
 
         StreamWriter writer = new StreamWriter(@"songScripts\" + csvName + ".csv");
 
