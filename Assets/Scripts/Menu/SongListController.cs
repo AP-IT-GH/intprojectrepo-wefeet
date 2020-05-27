@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SongListController : MonoBehaviour
 {
@@ -25,9 +27,18 @@ public class SongListController : MonoBehaviour
     };
     private string[] songNames = new string[] { };
 
+    public bool makeCostumsSongs = false;
+    public bool playCostumSongs = false;
+
+
     void Start()
     {
-        songNames = GetNamesSong(TestSongs);
+        if (makeCostumsSongs)
+            Debug.Log("make costum song");
+        if (playCostumSongs)
+            Debug.Log("Play Costum song");
+        if(!playCostumSongs && !playCostumSongs)
+            songNames = GetNamesSong(TestSongs);
 
         foreach (string song in songNames)
         {
@@ -43,7 +54,7 @@ public class SongListController : MonoBehaviour
     }
 
     public void ButtonClicked(string myTextString)
-    {
+    {        
         Debug.Log(myTextString);
     }
 
@@ -60,5 +71,9 @@ public class SongListController : MonoBehaviour
             listSongs.Add(tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
         }
         return listSongs.ToArray();
+    }
+    void getSongsInFile()
+    {
+        //Application.dataPath;
     }
 }

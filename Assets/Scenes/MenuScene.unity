@@ -3416,7 +3416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &704181391
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4598,6 +4598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonTemplate: {fileID: 1385233487}
+  makeCostumsSongs: 0
+  playCostumSongs: 0
 --- !u!114 &927115972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5193,7 +5195,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5410,6 +5412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonTemplate: {fileID: 1443005949}
+  makeCostumsSongs: 0
+  playCostumSongs: 0
 --- !u!114 &1171025866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6792,6 +6796,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 672289837}
     m_Modifications:
+    - target: {fileID: 692261019716451862, guid: 3f62fe1308447b7449a016c80c5e455c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 692261019716451862, guid: 3f62fe1308447b7449a016c80c5e455c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1443005950}
+    - target: {fileID: 692261019716451862, guid: 3f62fe1308447b7449a016c80c5e455c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 692261019716451862, guid: 3f62fe1308447b7449a016c80c5e455c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1787475414463571065, guid: 3f62fe1308447b7449a016c80c5e455c,
         type: 3}
       propertyPath: songListController
@@ -6806,6 +6830,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SongListButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472902848117470215, guid: 3f62fe1308447b7449a016c80c5e455c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6429077426828279150, guid: 3f62fe1308447b7449a016c80c5e455c,
         type: 3}
@@ -6927,6 +6956,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1443005947}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1443005950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1787475414463571065, guid: 3f62fe1308447b7449a016c80c5e455c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1443005947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443005949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5e5603936364a45a0fbf32861822d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1445220055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7015,7 +7056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1452678521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7024,7 +7065,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452678520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1.0625001, y: 1, z: 1}
   m_Children:
   - {fileID: 539939206}
