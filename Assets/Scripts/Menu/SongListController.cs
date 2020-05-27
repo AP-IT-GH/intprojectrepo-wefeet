@@ -27,7 +27,7 @@ public class SongListController : MonoBehaviour
 
     void Start()
     {
-        songNames = GetNamesSong(TestSongs);
+        songNames = GetNamesSong(findSongs.songsInProject);
 
         foreach (string song in songNames)
         {
@@ -37,8 +37,6 @@ public class SongListController : MonoBehaviour
             button.GetComponent<SongListButton>().SetText(song);
 
             button.transform.SetParent(buttonTemplate.transform.parent, false);
-
-
         }    
     }
 
@@ -48,7 +46,7 @@ public class SongListController : MonoBehaviour
     }
 
     //Get the song names out of the path's
-    string[] GetNamesSong(string[] songs)
+    string[] GetNamesSong(ArrayList songs)
     {
         List<string> listSongs = new List<string>();
 
