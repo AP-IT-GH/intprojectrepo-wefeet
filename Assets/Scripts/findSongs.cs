@@ -10,6 +10,7 @@ public class findSongs : MonoBehaviour
     string path = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
     string result;
     public static ArrayList songsInProject = new ArrayList();
+   
 
     void Start()
     {
@@ -42,46 +43,21 @@ public class findSongs : MonoBehaviour
             result = Path.GetFileName(file);
             songsInProject.Add(result);
         }
+
+        //MadeSongs();
     }
-
-    /*
-     * 
-    //https://www.youtube.com/watch?v=9gAHZGArDgU
-    public const string audioName = "mario.wav";
-
-    [Header("Audio stuff")]
-    public AudioSource audioSource;
-    public AudioClip audioClip;
-    public string soundPath;
-
-    private void Awake()
+    
+    public static ArrayList MadeSongs()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
-        soundPath = "file://" + Application.streamingAssetsPath + "/Sound/";
-        StartCoroutine(LoadAudio());
-    }
+        string temp;
+       ArrayList madeSongs = new ArrayList();
 
-    private IEnumerator LoadAudio()
-    {
-        WWW request = GetAudioFromFile(soundPath, audioName);
-        yield return request;
-
-        audioClip = request.GetAudioClip();
-        audioClip.name = audioName;
+        foreach (string file in Directory.GetFiles(@"songScripts\", "*.csv"))
+        {
+            temp = Path.GetFileName(file);
+            madeSongs.Add(temp.Split('.')[0]);
+            //Debug.Log("Song " +temp.Split('.')[0] + " made! ----------------------");
+        }
+        return madeSongs;
     }
-
-    private void PlayAudioFile()
-    {
-        audioSource.clip = audioClip;
-        audioSource.Play();
-        audioSource.loop = true;
-    }
-
-    private WWW GetAudioFromFile(string path, string filename)
-    {
-        string audioToLoad = string.Format(path + "{0}", filename);
-        WWW request = new WWW(audioToLoad);
-        return request;
-    }
-    */
 }
