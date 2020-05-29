@@ -23,14 +23,11 @@ public class SongListButton : MonoBehaviour
     }
     public void OnClick()
     {
-        AudioManager AudioManager = FindObjectOfType<AudioManager>();
-        AudioManager.loadAudio(pathToFolder, SongNameInFolder) ;
-        songListController.ButtonClicked(myTextString);
+        songListController.ButtonClicked(myTextString, pathToFolder, SongNameInFolder);
     }
     public void initSong(string songNameInFolder)
     {
         SongNameInFolder = songNameInFolder;
-        Debug.Log(SongNameInFolder);
     }
     private void Awake()
     {

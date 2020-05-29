@@ -20,12 +20,12 @@ public class SongListController : MonoBehaviour
     {
         
 
-        if (makeCostumsSongs)
+        if (playCostumSongs)
         {
             pathToSongs = findSongs.MadeSongs();
             songNames = GetNamesSong(pathToSongs);
         }            
-        else if (playCostumSongs)
+        else if (makeCostumsSongs)
         {
             pathToSongs = findSongs.songsInProject;
             songNames = GetNamesSong(pathToSongs);
@@ -41,16 +41,18 @@ public class SongListController : MonoBehaviour
             button.SetActive(true);
 
             button.GetComponent<SongListButton>().SetText(songNames[numberSong]);
+            button.GetComponent<SongListButton>().initSong(pathToSongs[numberSong].ToString());
 
             button.transform.SetParent(buttonTemplate.transform.parent, false);
-            button.GetComponent<SongListButton>().initSong(pathToSongs[numberSong].ToString());
+            
         }    
     }
 
-    public void ButtonClicked(string myTextString)
+    public void ButtonClicked(string myTextString, string path, string songName)
     {
-        SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
-        //Debug.Log(myTextString);
+        AudioManager AudioManager = FindObjectOfType<AudioManager>();
+        AudioManager.changeAudioWithFile(path, songName);
+        //SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
     }
 
     //Get the song names out of the path's
