@@ -28,16 +28,24 @@ public class SongListController : MonoBehaviour
             songNames = GetNamesSong(TestSongs);
         }
 
-
-        foreach (string song in songNames)
+        for (int numberSong = 0; numberSong <= songNames.Length; numberSong++)
         {
             GameObject button = Instantiate(buttonTemplate) as GameObject;
             button.SetActive(true);
 
-            button.GetComponent<SongListButton>().SetText(song);
+            button.GetComponent<SongListButton>().SetText(songNames[numberSong]);
 
             button.transform.SetParent(buttonTemplate.transform.parent, false);
-        }    
+        }
+        //foreach (string song in songNames)
+        //{
+        //    GameObject button = Instantiate(buttonTemplate) as GameObject;
+        //    button.SetActive(true);
+
+        //    button.GetComponent<SongListButton>().SetText(song);
+
+        //    button.transform.SetParent(buttonTemplate.transform.parent, false);
+        //}    
     }
 
     public void ButtonClicked(string myTextString)
@@ -49,13 +57,15 @@ public class SongListController : MonoBehaviour
     string[] GetNamesSong(ArrayList songs)
     {
         List<string> listSongs = new List<string>();
-
+        int numberSong = 0;
         //split string to get Song name
-        foreach (string item in songs)
+        foreach (string song in songs)
         {
             string[] tempSong = new string[] { };
-            tempSong = item.Split('\\');
-            listSongs.Add(tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
+            tempSong = song.Split('\\');
+            listSongs.Add(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
+            Debug.Log(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
+            numberSong++;
         }
         return listSongs.ToArray();
     }
