@@ -13,6 +13,8 @@ public class SongListButton : MonoBehaviour
     private SongListController songListController;  
 
     private string myTextString;
+    private string pathToFolder;
+    private string SongNameInFolder;
 
     public void SetText(string textString)
     {
@@ -21,8 +23,17 @@ public class SongListButton : MonoBehaviour
     }
     public void OnClick()
     {
-        SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
-        //SceneManager.LoadScene("Disco", LoadSceneMode.Single);
+        AudioManager AudioManager = FindObjectOfType<AudioManager>();
+        AudioManager.loadAudio(pathToFolder, SongNameInFolder) ;
         songListController.ButtonClicked(myTextString);
+    }
+    public void initSong(string songNameInFolder)
+    {
+        SongNameInFolder = songNameInFolder;
+        Debug.Log(SongNameInFolder);
+    }
+    private void Awake()
+    {
+        pathToFolder = Application.streamingAssetsPath + "/sound/";
     }
 }

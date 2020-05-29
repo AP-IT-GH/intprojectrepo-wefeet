@@ -10,6 +10,7 @@ public class SongListController : MonoBehaviour
     private GameObject buttonTemplate;
     private ArrayList TestSongs = new ArrayList();    
     private string[] songNames = new string[] { };
+    private ArrayList pathToSongs = new ArrayList();
 
     public bool makeCostumsSongs = false;
     public bool playCostumSongs = false;
@@ -20,15 +21,21 @@ public class SongListController : MonoBehaviour
         
 
         if (makeCostumsSongs)
-            songNames = GetNamesSong(findSongs.MadeSongs());
+        {
+            pathToSongs = findSongs.MadeSongs();
+            songNames = GetNamesSong(pathToSongs);
+        }            
         else if (playCostumSongs)
-            songNames = GetNamesSong(findSongs.songsInProject);
+        {
+            pathToSongs = findSongs.songsInProject;
+            songNames = GetNamesSong(pathToSongs);
+        }            
         else if (!playCostumSongs || !playCostumSongs) {
             initTestArrayList();
             songNames = GetNamesSong(TestSongs);
         }
 
-        for (int numberSong = 0; numberSong <= songNames.Length; numberSong++)
+        for (int numberSong = 0; numberSong < songNames.Length; numberSong++)
         {
             GameObject button = Instantiate(buttonTemplate) as GameObject;
             button.SetActive(true);
@@ -36,21 +43,14 @@ public class SongListController : MonoBehaviour
             button.GetComponent<SongListButton>().SetText(songNames[numberSong]);
 
             button.transform.SetParent(buttonTemplate.transform.parent, false);
-        }
-        //foreach (string song in songNames)
-        //{
-        //    GameObject button = Instantiate(buttonTemplate) as GameObject;
-        //    button.SetActive(true);
-
-        //    button.GetComponent<SongListButton>().SetText(song);
-
-        //    button.transform.SetParent(buttonTemplate.transform.parent, false);
-        //}    
+            button.GetComponent<SongListButton>().initSong(pathToSongs[numberSong].ToString());
+        }    
     }
 
     public void ButtonClicked(string myTextString)
-    {        
-        Debug.Log(myTextString);
+    {
+        SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
+        //Debug.Log(myTextString);
     }
 
     //Get the song names out of the path's
@@ -64,7 +64,7 @@ public class SongListController : MonoBehaviour
             string[] tempSong = new string[] { };
             tempSong = song.Split('\\');
             listSongs.Add(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
-            Debug.Log(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
+            //Debug.Log(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
             numberSong++;
         }
         return listSongs.ToArray();
