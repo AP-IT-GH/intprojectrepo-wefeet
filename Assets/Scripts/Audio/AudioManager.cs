@@ -27,18 +27,17 @@ public class AudioManager : MonoBehaviour
         BackGroundMusic.Stop();
         BackGroundMusic.clip = music;
         BackGroundMusic.Play();
-        Debug.Log("Audio Changed");
+        //Debug.Log("Audio Changed");
     }
 
     public void changeAudioWithFile(string Path, string audioName)
     {
-        Debug.Log("Audio Change activated");
+        //Debug.Log("Audio Change activated");
         AudioPath = "file://" + Path;
         AudioName = audioName;
         BackGroundMusic.Pause();
         StartCoroutine(loadAudio());
-        BackGroundMusic.Play();
-        Debug.Log("Audio Change done");
+        //Debug.Log("Audio Change done");
     }
 
     private IEnumerator loadAudio()

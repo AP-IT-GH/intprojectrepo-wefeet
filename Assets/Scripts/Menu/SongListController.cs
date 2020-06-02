@@ -39,7 +39,7 @@ public class SongListController : MonoBehaviour
 
         for (int numberSong = 0; numberSong < songNames.Length; numberSong++)
         {
-            Debug.Log("button created: " + songNames[numberSong]);
+            //Debug.Log("button created: " + songNames[numberSong]);
             GameObject button = Instantiate(buttonTemplate) as GameObject;
             button.SetActive(true);
 
@@ -53,10 +53,10 @@ public class SongListController : MonoBehaviour
 
     public void ButtonClicked(string myTextString, string path, string songName)
     {
-        Debug.Log(myTextString);
+        //tijdelijk test code
         string tempPath = Application.streamingAssetsPath + "/sound/";
-
         audioManager.changeAudioWithFile(tempPath, "BlindingLights.wav"); //test song
+
         //AudioManager.changeAudioWithFile(path, songName);
         SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
     }
