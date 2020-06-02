@@ -15,10 +15,12 @@ public class SongListController : MonoBehaviour
     public bool makeCostumsSongs = false;
     public bool playCostumSongs = false;
 
+    AudioManager audioManager;
+
 
     void Start()
     {
-        
+        audioManager = FindObjectOfType<AudioManager>();
 
         if (playCostumSongs)
         {
@@ -52,9 +54,11 @@ public class SongListController : MonoBehaviour
     public void ButtonClicked(string myTextString, string path, string songName)
     {
         Debug.Log(myTextString);
-        //AudioManager AudioManager = FindObjectOfType<AudioManager>();
+        string tempPath = Application.streamingAssetsPath + "/sound/";
+
+        audioManager.changeAudioWithFile(tempPath, "BlindingLights.wav"); //test song
         //AudioManager.changeAudioWithFile(path, songName);
-        //SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
     }
 
     //Get the song names out of the path's
@@ -68,7 +72,7 @@ public class SongListController : MonoBehaviour
             string[] tempSong = new string[] { };
             tempSong = song.Split('\\');
             listSongs.Add(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
-            Debug.Log(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
+            //Debug.Log(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
             numberSong++;
         }
         return listSongs.ToArray();
@@ -76,7 +80,7 @@ public class SongListController : MonoBehaviour
 
     private void initTestArrayList()
     {
-        Debug.Log("init songs");
+        Debug.Log("init test songs");
         TestSongs.Add(@"c:\test\test\song.mp3");
         TestSongs.Add(@"c:\test\test\song1.mp3");
         TestSongs.Add(@"c:\test\test\song2.mp3");

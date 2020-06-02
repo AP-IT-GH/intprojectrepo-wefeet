@@ -37,6 +37,7 @@ public class AudioManager : MonoBehaviour
         AudioName = audioName;
         BackGroundMusic.Pause();
         StartCoroutine(loadAudio());
+        BackGroundMusic.Play();
         Debug.Log("Audio Change done");
     }
 
@@ -57,9 +58,7 @@ public class AudioManager : MonoBehaviour
     {
         Debug.Log("Do request for song: " + path + Filename);
         string AudioToLoad = string.Format(path + Filename);
-        //WWW reqeust = new WWW(AudioToLoad);
-        Debug.Log(@"file://C://Users/quint/Music/BlindingLights.mp3");
-        WWW reqeust = new WWW("file://C://Users/quint/Music/BlindingLights.mp3");
+        WWW reqeust = new WWW(AudioToLoad);
         return reqeust;
 
     }
