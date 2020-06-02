@@ -57,7 +57,9 @@ public class AudioManager : MonoBehaviour
     {
         Debug.Log("Do request for song: " + path + Filename);
         string AudioToLoad = string.Format(path + Filename);
-        WWW reqeust = new WWW(AudioToLoad);
+        //WWW reqeust = new WWW(AudioToLoad);
+        Debug.Log(@"file://C://Users/quint/Music/BlindingLights.mp3");
+        WWW reqeust = new WWW("file://C://Users/quint/Music/BlindingLights.mp3");
         return reqeust;
 
     }

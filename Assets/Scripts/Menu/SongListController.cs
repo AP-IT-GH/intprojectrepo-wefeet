@@ -37,6 +37,7 @@ public class SongListController : MonoBehaviour
 
         for (int numberSong = 0; numberSong < songNames.Length; numberSong++)
         {
+            Debug.Log("button created: " + songNames[numberSong]);
             GameObject button = Instantiate(buttonTemplate) as GameObject;
             button.SetActive(true);
 
@@ -50,8 +51,9 @@ public class SongListController : MonoBehaviour
 
     public void ButtonClicked(string myTextString, string path, string songName)
     {
-        AudioManager AudioManager = FindObjectOfType<AudioManager>();
-        AudioManager.changeAudioWithFile(path, songName);
+        Debug.Log(myTextString);
+        //AudioManager AudioManager = FindObjectOfType<AudioManager>();
+        //AudioManager.changeAudioWithFile(path, songName);
         //SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
     }
 
@@ -66,7 +68,7 @@ public class SongListController : MonoBehaviour
             string[] tempSong = new string[] { };
             tempSong = song.Split('\\');
             listSongs.Add(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
-            //Debug.Log(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
+            Debug.Log(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
             numberSong++;
         }
         return listSongs.ToArray();
@@ -74,6 +76,7 @@ public class SongListController : MonoBehaviour
 
     private void initTestArrayList()
     {
+        Debug.Log("init songs");
         TestSongs.Add(@"c:\test\test\song.mp3");
         TestSongs.Add(@"c:\test\test\song1.mp3");
         TestSongs.Add(@"c:\test\test\song2.mp3");
