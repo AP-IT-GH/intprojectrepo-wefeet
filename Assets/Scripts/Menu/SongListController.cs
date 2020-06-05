@@ -54,10 +54,13 @@ public class SongListController : MonoBehaviour
     public void ButtonClicked(string myTextString, string path, string songName)
     {
         //let the GameManager know what you wanne do. Create a Dance or play a Dance
-        if (playCostumSongs)
+        if (makeCostumsSongs)
             ManageGame.CreateCostumSong = true;
-        else if (makeCostumsSongs)
+        else if (playCostumSongs)
             ManageGame.PlayCostumSong = true;
+
+        //Give GameManger the name of the song
+        ManageGame.SongName = songName;
 
         //tijdelijk test code
         string tempPath = Application.streamingAssetsPath + "/sound/";
