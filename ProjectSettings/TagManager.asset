@@ -7,6 +7,9 @@ TagManager:
   - mainMenuTag
   - score
   - screen
+  - Enemy
+  - CreateCostumSong
+  - PlayCostumSong
   layers:
   - Default
   - TransparentFX
