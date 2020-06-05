@@ -42,11 +42,11 @@ public class AudioManager : MonoBehaviour
 
     private IEnumerator loadAudio()
     {
-        Debug.Log("before doing request");
+        //Debug.Log("before doing request");
 
         WWW request = GetAudioFromFile(AudioPath, AudioName);
 
-        Debug.Log("request for song done");
+        //Debug.Log("request for song done");
         yield return request;
 
         audioClip = request.GetAudioClip();
@@ -55,7 +55,7 @@ public class AudioManager : MonoBehaviour
 
     public WWW GetAudioFromFile(string path, string Filename)
     {
-        Debug.Log("Do request for song: " + path + Filename);
+        //Debug.Log("Do request for song: " + path + Filename);                                                                           
         string AudioToLoad = string.Format(path + Filename);
         WWW reqeust = new WWW(AudioToLoad);
         return reqeust;

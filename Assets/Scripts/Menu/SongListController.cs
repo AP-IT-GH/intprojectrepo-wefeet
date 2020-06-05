@@ -53,10 +53,17 @@ public class SongListController : MonoBehaviour
 
     public void ButtonClicked(string myTextString, string path, string songName)
     {
+        //let the GameManager know what you wanne do. Create a Dance or play a Dance
+        if (playCostumSongs)
+            ManageGame.CreateCostumSong = true;
+        else if (makeCostumsSongs)
+            ManageGame.PlayCostumSong = true;
+
         //tijdelijk test code
         string tempPath = Application.streamingAssetsPath + "/sound/";
         audioManager.changeAudioWithFile(tempPath, "BlindingLights.wav"); //test song
 
+        //Dit is de code die op het einde er moet staan
         //AudioManager.changeAudioWithFile(path, songName);
         SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
     }
