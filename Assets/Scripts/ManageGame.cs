@@ -75,6 +75,8 @@ public class ManageGame : MonoBehaviour
             Debug.Log("Create Costum song");
             Play.SetActive(false);
             //Create.SetActive(true);
+
+            Create.gameObject.GetComponent<RecordCustomSong>().song = songName;
         }
         else if (playCostumSong)
         {
