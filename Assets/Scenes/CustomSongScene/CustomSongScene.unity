@@ -8324,7 +8324,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e76525a2f6eb45d4ebb4d7b9f98d8cd2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19118,7 +19118,7 @@ MonoBehaviour:
   textField: {fileID: 372443404}
   scoreScript1: {fileID: 0}
   scoreScript2: {fileID: 0}
-  scoreScriptDefault: {fileID: 2084690368}
+  scoreScriptDefault: {fileID: 1641178338}
 --- !u!1 &1649194828
 GameObject:
   m_ObjectHideFlags: 0
@@ -19558,7 +19558,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19080
+  m_Name: pb_Mesh77192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22348,7 +22348,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f2a6801b4b1c54590988b34ccb95bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiles: []
+  tiles:
+  - {fileID: 124164347}
+  - {fileID: 1473166249}
+  - {fileID: 1929876101}
+  - {fileID: 1900101903}
+  - {fileID: 1093260208}
+  - {fileID: 1853388958}
+  - {fileID: 1432672848}
+  - {fileID: 1501478373}
+  - {fileID: 575510480}
   song: TheBigEmptySong
   RecordTrigger:
     actionPath: /actions/MenuButton1/in/MenuInteraction
