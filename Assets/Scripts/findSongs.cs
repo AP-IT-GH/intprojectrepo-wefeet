@@ -15,7 +15,7 @@ public class findSongs : MonoBehaviour
     void Start()
     {
         //ArrayList met alle namen
-        foreach (string file in Directory.GetFiles(path, "*.mp3"))
+        foreach (string file in Directory.GetFiles(path, "*.wav"))
         {
             result = Path.GetFileName(file);
             songs.Add(result);
@@ -38,7 +38,7 @@ public class findSongs : MonoBehaviour
             else { Debug.Log("File already excits"); }
         }
 
-        foreach (string file in Directory.GetFiles(Application.streamingAssetsPath + "/Sound/", "*.mp3"))
+        foreach (string file in Directory.GetFiles(Application.streamingAssetsPath + "/Sound/", "*.wav"))
         {
             result = Path.GetFileName(file);
             songsInProject.Add(result);

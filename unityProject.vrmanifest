@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.wefeet.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "H:\\3de jaar\\International project\\WeFeet\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "F:\\Virtual Reality\\Project WeFeet\\intprojectrepo-wefeet-master\\intprojectrepo-wefeet\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "WeFeet [Testing]"

@@ -28,6 +28,7 @@ public class ManageGame : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        GameObject.FindGameObjectWithTag("mainMenuTag").SetActive(false);
         if (scene.name == "CustomSongScene")
         {
             Debug.Log(SceneManager.GetActiveScene().name);
@@ -83,6 +84,8 @@ public class ManageGame : MonoBehaviour
             Debug.Log("Play Costum song");
             //Play.SetActive(true);
             Create.SetActive(false);
+
+            Play.gameObject.GetComponent<playCustomSong>().csvName = songName + ".wav.csv";
         }
     }
 }
