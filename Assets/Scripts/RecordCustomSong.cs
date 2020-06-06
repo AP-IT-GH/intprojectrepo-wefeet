@@ -135,6 +135,8 @@ public class RecordCustomSong : MonoBehaviour
 
         writer.Close();
 
+        Mat.CloseConnection();
+
         Destroy(this);
     }
 }
