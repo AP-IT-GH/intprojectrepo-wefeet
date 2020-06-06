@@ -31,6 +31,8 @@ public class RecordCustomSong : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //GameObject.Find("Menu").
+        
         // Start Mat & Timer
         Mat.Start();
         timer = 0f;
@@ -114,6 +116,8 @@ public class RecordCustomSong : MonoBehaviour
         if (Mat.LeftBackward) tiles[6].SetActive(true);
         if (Mat.Backward) tiles[7].SetActive(true);
         if (Mat.RightBackward) tiles[8].SetActive(true);
+
+        Debug.Log("MAT=" + Mat.Forward + " = " + tiles[1].active.ToString());
     }
 
     private void WriteCsv()
