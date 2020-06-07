@@ -20,8 +20,14 @@ public class SongListController : MonoBehaviour
 
     void Start()
     {
+        //zoek de audiuomanager
         audioManager = FindObjectOfType<AudioManager>();
 
+        /*
+         * Kijk wat er geselecteerd is
+         * Kijk wat het path is
+         * kijk wat de song naam is
+         */
         if (playCostumSongs)
         {
             pathToSongs = findSongs.MadeSongs();
@@ -37,9 +43,9 @@ public class SongListController : MonoBehaviour
             songNames = GetNamesSong(TestSongs);
         }
 
+        //maak de button voor de lijst aan en voeg alles toe
         for (int numberSong = 0; numberSong < songNames.Length; numberSong++)
         {
-            //Debug.Log("button created: " + songNames[numberSong]);
             GameObject button = Instantiate(buttonTemplate) as GameObject;
             button.SetActive(true);
 
@@ -51,33 +57,38 @@ public class SongListController : MonoBehaviour
         }    
     }
 
+    /// <summary>
+    /// Wat moet er gebeuren als er op de knop wordt gedrukt
+    /// </summary>
+    /// <param name="myTextString">Test text</param>
+    /// <param name="path">Path naar de file</param>
+    /// <param name="songName">De naam van de song</param>
     public void ButtonClicked(string myTextString, string path, string songName)
     {
         //Give GameManger the name of the song
         Debug.Log(songName);
         ManageGame.SongName = songName;
 
-        //tijdelijk test code
         string tempPath = Application.streamingAssetsPath + "/sound/";
-        //audioManager.changeAudioWithFile(tempPath, "BlindingLights.wav"); //test song
 
         //let the GameManager know what you wanne do. Create a Dance or play a Dance
-        if (makeCostumsSongs)
-        {
+        if (makeCostumsSongs) {
             ManageGame.CreateCostumSong = true;
             audioManager.changeAudioWithFile(path, songName);
         }           
-        else if (playCostumSongs)
-        {
+        else if (playCostumSongs) {
             ManageGame.PlayCostumSong = true;
             audioManager.changeAudioWithFile(path, songName+".wav");
         }
-
         
         SceneManager.LoadScene("CustomSongScene", LoadSceneMode.Single);
     }
 
-    //Get the song names out of the path's
+    /// <summary>
+    /// Krijg alleen de, naam van de song zonder path of extensie
+    /// </summary>
+    /// <param name="songs">Array met padden naar de files</param>
+    /// <returns>List van alleen song namen</returns>
     string[] GetNamesSong(ArrayList songs)
     {
         List<string> listSongs = new List<string>();
@@ -88,12 +99,12 @@ public class SongListController : MonoBehaviour
             string[] tempSong = new string[] { };
             tempSong = song.Split('\\');
             listSongs.Add(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
-            //Debug.Log(numberSong + " " + tempSong[tempSong.Length - 1].Remove(tempSong[tempSong.Length - 1].Length - 4, 4));
             numberSong++;
         }
         return listSongs.ToArray();
     }
 
+    //Initialiseer de test Array (voor als er geen nummers in de andere Array zijn
     private void initTestArrayList()
     {
         Debug.Log("init test songs");

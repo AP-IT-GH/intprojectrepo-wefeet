@@ -16,16 +16,16 @@ public class ManageGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Start GameManager");
+        //Zorg er voor dat ManageGame niet wordt verwijderd maar als er all 1 is wordt de nieuwste verwijderd
         DontDestroyOnLoad(gameObject);
         if (FindObjectsOfType<ManageGame>().Length > 1)
             Destroy(gameObject);
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-
-        
+        //add event to OnSceneLoaded
+        SceneManager.sceneLoaded += OnSceneLoaded;        
     }
 
+    //Functie die wordt toegevoegd als er een scene is geladen
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         GameObject.FindGameObjectWithTag("mainMenuTag").SetActive(false);
@@ -35,7 +35,6 @@ public class ManageGame : MonoBehaviour
             StartCostumSongScene();
         }
     }
-
 
     //Properties
     public static bool CreateCostumSong
@@ -62,29 +61,22 @@ public class ManageGame : MonoBehaviour
 
     private void StartCostumSongScene()
     {
-        //werkt maar op een rare manier (raad het niet aan)
-        //GameObject gameObj = GameObject.Find("playTrigger");
-        //gameObj.GetComponent<RecordCustomSong>().enabled = true;
-        //gameObj.GetComponent<playCustomSong>().enabled = true;
-        //gameObj.GetComponent<showScore>().enabled = false;
-
+        //Zoek GameObject aan de hand van een tag
         Play = GameObject.FindGameObjectWithTag("PlayCostumSong");
         Create = GameObject.FindGameObjectWithTag("CreateCostumSong");
 
         if (createCostumSong)
         {
-            Debug.Log("Create Costum song");
+            //Zet het Object PlayCostumSong uit
             Play.SetActive(false);
-            //Create.SetActive(true);
-
+            //zoek in het GameObject naar het component (het script in dit geval) RecordCustomSong en verander de variable song
             Create.gameObject.GetComponent<RecordCustomSong>().song = songName;
         }
         else if (playCostumSong)
         {
-            Debug.Log("Play Costum song");
-            //Play.SetActive(true);
+            //Zet het Object CreateCostumSong uit
             Create.SetActive(false);
-
+            //zoek in het GameObject naar het component (het script in dit geval) playCustomSong en verander de variable songname en voeg .wav.csv
             Play.gameObject.GetComponent<playCustomSong>().csvName = songName + ".wav.csv";
         }
     }
